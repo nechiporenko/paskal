@@ -1,0 +1,177 @@
+@import "../modules/base";
+/*Site Footer*/
+.b-footer{
+    padding:24px 0;
+    font-family:$font-alt;
+    @include linear-gradient(to bottom, #2d2d2d, #161616);
+    color:#fff;
+    
+
+    @include media($desktop){
+        @include font-size(18px);
+    }
+}
+
+.b-footer__col{
+    @extend .g-column;
+
+    @include media($desktop){
+        width:(100%-$grid-gutter)/2;
+        margin-left:$grid-gutter;
+
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}
+
+
+.b-footer__col--phones{
+    @include media($tablet){
+        .b-footer__title{
+            padding-left:70px;
+        }
+    }
+    
+}
+
+
+.b-footer__inner{ //на средних разрешениях и выше нужно выровнять телефоны по правому краю
+    @include media($desktop){
+        float:right;
+    }
+}
+
+
+.b-footer__title{
+    display:block;
+    margin-bottom:32px;
+    line-height:1.1;
+    font-family:$font-alt;
+    color:#fff;
+    font-weight:200;
+    @include font-size(26px);
+}
+
+.b-footer__addr{
+    @extend .g-column;
+    line-height:1.6667;
+
+    @include media($small){
+        width:(100%-$grid-gutter)/2;
+        margin-left:$grid-gutter;
+
+        &:first-child{
+            margin-left:0;
+        }
+    }
+}
+
+.b-footer__phones{
+    float:left;
+}
+
+
+.f-social{
+    list-style-type:none;
+    margin:0 10px $project-line-height 0;
+    padding:0 10px 0 0;
+    float:left;
+    border-right:1px solid #fff;
+
+    @include media($tablet){
+        padding-right:20px;
+        margin-right:20px;
+    }
+}
+.f-social__item{
+    display:block;
+    margin-bottom:5px;
+}
+
+.f-social__link{
+    display:block;
+    @include size(30px);
+    line-height:28px;
+    border:2px solid #fff;
+    border-radius:50%;
+    box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    font-size:rem(18px);
+
+
+    i{
+        position:absolute;
+        top:50%;
+        left:50%;
+        @include transform(translate(-50%, -50%));
+    }
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+        border-color:$primary-alt;
+    }
+}
+
+.b-footer__tel{
+    display:block;
+    white-space:nowrap;
+    color:#fff;
+    font-size:rem(28px);
+    font-weight:200;
+    text-decoration:none;
+    margin-bottom:5px;
+
+    @include media($mobile){
+        @include font-size(32px);
+    }
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}
+
+.b-footer__info{
+    display:block;
+    margin-bottom:22px;
+}
+
+.b-footer__copyright{
+    @extend .b-footer__inner;
+    line-height:1.4;
+}
+
+.b-footer__link{
+    display:inline-block;
+    width:220px;
+    min-height:44px;
+    padding-left:50px;
+    margin-bottom:25px;
+    color:#fff;
+    text-decoration:none;
+    line-height:1.4;
+    position:relative;
+    box-sizing:border-box;
+    
+    i{
+        position:absolute;
+        top:0;
+        left:0;
+        @include font-size(44px);
+    }
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+
+    @include media($tablet){
+        margin-bottom:0;
+    }
+}

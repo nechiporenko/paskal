@@ -1,0 +1,73 @@
+﻿@import "../../modules/_base.scss";
+/*Lang switcher*/
+.b-lang{
+    float:right;
+    @extend .g-clearlist;
+    text-align:right;
+}
+.b-lang__switcher{
+    position:relative;
+}
+
+.b-lang__btn{
+    @extend .g-clearbutton;
+    @include font-size(14px);
+    text-transform:uppercase;
+
+    &:hover,
+    &:focus{
+        color:$primary-alt;
+    }
+}
+
+.b-lang__menu{
+    list-style-type:none;
+    padding:15px 20px;
+    border:1px solid $border-color;
+    background:#fff;
+    position:absolute;
+    top:8px; right:0;
+    z-index:1010;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display:none;
+}
+
+.b-lang__link{
+    display:block;
+    color:#1c1c1c;
+    text-decoration:none;
+    padding:8px 20px;
+
+    &:hover,
+    &:active{
+        background:#f2f2f2;
+        color:$primary-alt;
+    }
+}
+
+.b-lang__item{
+    display:block;
+    margin:0 -20px;
+
+    &.current{
+        .b-lang__link{
+            color:$primary;
+            text-decoration:underline;
+            cursor:default;
+        }
+    }
+}
+
+.no-js{
+    .b-lang__menu{
+        top:0;
+    }
+    .b-lang{
+        &:hover{
+            .b-lang__menu{
+                display:block;
+            }
+        }
+    }
+}
+

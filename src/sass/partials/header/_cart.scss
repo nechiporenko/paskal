@@ -1,0 +1,51 @@
+﻿@import "../../modules/_base.scss";
+/*Header cart link*/
+.b-cartlink{
+    float:left;
+    margin:0 0 0 80px;
+    padding-left:58px;
+    position:relative;
+    text-decoration:none;
+    color:#1c1c1c;
+    font-size:rem(16px);
+    display:none;
+    cursor:default;
+
+    @include media($desktop){
+        display:block;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+
+    &.active{
+        color:$primary;
+        cursor:pointer;
+
+        .b-cartlink__icon{
+            color:$primary;
+        }
+
+        &:hover,
+        &:active{
+            .b-cartlink__icon{
+                @include transform(translateY(-8px));
+            }
+        }
+    }
+}
+
+.b-cartlink__icon{
+    @extend .b-callback__icon;
+    @include font-size(41px);
+}
+.b-cartlink__text{
+    display:block;
+    margin-bottom:5px;
+}
+.b-cartlink__count{
+    font-style:italic;
+    font-weight:200;
+}

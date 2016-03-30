@@ -1,0 +1,63 @@
+﻿@import "../../modules/_base.scss";
+
+@import "_search.scss";
+
+/*Header desktop menu section*/
+.b-header__menu{
+    @include linear-gradient(to bottom, #505eb5, #3b4793);
+    color:#fff;
+}
+
+.b-header__btn{
+    display:inline-block;
+    vertical-align:middle;
+    @include size(36px);
+    padding:0;
+    margin:4px 2px 4px 0;
+    line-height:36px;
+    background:none;
+    border:1px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    box-sizing:border-box;
+    font-size:rem(20);
+    @include transition(transform .3s ease);
+    position:relative;
+
+    &:active{
+        @include transform(translateX(2px));
+    }
+
+    &:active,
+    &:focus{
+        outline:0;
+    }
+}
+
+.b-header__btn--callback{
+    @include media($tablet){
+        display:none;
+    }
+}
+
+.b-header__btn--menu,
+.b-header__btn--cart{
+    @include media($desktop){
+        display:none;
+    }
+}
+
+
+.b-header__btncount{
+    display:block;
+    @include size(12px);
+    border-radius:50%;
+    line-height:12px;
+    text-align:center;
+    background:#fff;
+    color:$primary;
+    font-size:rem(8);
+    position:absolute;
+    bottom:0; right:0;
+}

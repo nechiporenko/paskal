@@ -1,0 +1,85 @@
+﻿@import "base";
+/* Buttons */
+.g-btn{
+    display:inline-block;
+    vertical-align:middle;
+    @include px2rem(margin-bottom, $project-line-height);
+    @include px2rem(height, 38px);
+    @include px2rem(line-height, 38px);
+    @include px2rem(padding, 0 30px);
+    color:$text-color;
+    text-align: center;
+    @include font-size(16px);
+    font-family:$font-alt;
+    font-weight:600;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius:$border-radius;
+    border: none;
+    @include linear-gradient(to bottom, #e4e4e4, #aeaeae);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus{
+        @include linear-gradient(to top, #e4e4e4, #aeaeae);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        outline:0;
+    }
+
+    &:active,
+    &:disabled{
+        box-shadow:none;
+    }
+
+    &:active{
+        @include transform(translateY(2px));
+    }
+}
+
+
+.g-btn--primary{
+    color:#fff;
+    @include linear-gradient(to bottom, #505eb5, #3b4793);
+
+    &:hover,
+    &:focus{
+        color:#fff;
+        @include linear-gradient(to top, #505eb5, #3b4793);
+    }
+}
+
+.g-btn--alt{
+    color:#fff;
+    @include linear-gradient(to bottom, #ee464b, #af141a);
+
+    &:hover,
+    &:focus{
+        color:#fff;
+        @include linear-gradient(to top, #ee464b, #af141a);
+    }
+}
+
+.g-btn--small{
+    @include px2rem(height, 30px);
+    @include px2rem(line-height, 30px);
+    @include font-size(12px);
+}
+
+.g-btn--large{
+    @include px2rem(height, 46px);
+    @include px2rem(line-height, 46px);
+    @include font-size(18px);
+}
+
+.g-clearbutton{
+    display:inline-block;
+    vertical-align:middle;
+    border:none;
+    background:none;
+    padding:0;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline:0;
+}

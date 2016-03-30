@@ -1,0 +1,54 @@
+﻿@import "../../modules/_base.scss";
+/* Desktop Header Menu */
+.h-menu{
+    @extend .g-clearlist;
+    float:left;
+    font-size:0;
+    display:none;
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+.h-menu__item{
+    display:inline-block;
+    position:relative;
+    @include font-size(14px);
+
+    &.current{
+        .h-menu__link{
+            @include linear-gradient(to top, #505eb5, #3b4793);
+            cursor:default;
+        }
+    }
+
+    &:before{
+        content:'';
+        display:block;
+        width:2px;
+        background:#37438a;
+        border-right:1px solid #4c5aaf;
+        box-sizing:border-box;
+        position:absolute;
+        top:4px; left:-1px; bottom:4px;
+    }
+
+    &:first-child{
+        &:before{
+            display:none;
+        }
+    }
+}
+
+.h-menu__link{
+    display:inline-block;
+    padding:15px 25px;
+    color:#fff;
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        @include linear-gradient(to top, #505eb5, #3b4793);
+    }
+}

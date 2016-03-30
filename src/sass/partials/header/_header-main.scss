@@ -1,0 +1,16 @@
+﻿@import "../../modules/_base.scss";
+.b-header__main{
+    padding:10px 0;
+    background:#fff;
+    color:#1c1c1c;
+
+    @include media($desktop){
+        padding:26px 0 20px;
+    }
+}
+
+
+@import "_logo.scss";
+@import "_callback.scss";
+@import "_cart.scss";
+@import "_lang.scss";

@@ -1,0 +1,63 @@
+﻿@import "../../modules/_base.scss";
+
+/*Header Callback*/
+.b-callback{
+    float:left;
+    margin:0 0 0 100px;
+    padding-left:46px;
+    position:relative;
+    min-height:45px;
+    font-size:rem(16px);
+    display:none;
+
+    @include media($tablet){
+        display:block;
+    }
+
+    &:hover{
+        .b-callback__icon{
+            color:$primary;
+            @include transform(translateY(-8px));
+        }
+    }
+}
+
+.b-callback__icon{
+    position:absolute;
+    left:0; top:0;
+    @include font-size(45px);
+    color:#b3b3b3;
+    @include transition-property(color, transform);
+    @include transition-timing-function(ease);
+    @include transition-duration(.3s);
+}
+.b-callback__phone{
+    display:block;
+    margin-bottom:5px;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:rem(1px);
+    color:#1c1c1c;
+    white-space:nowrap;
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.b-callback__link{
+    display:block;
+    text-decoration:none;
+    color:#1c1c1c;
+    font-style:italic;
+    font-weight:200;
+    @include font-size(14px);
+    border-bottom:1px dotted $border-color;
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+        border-color:$primary-alt;
+    }
+}

@@ -1,0 +1,53 @@
+﻿@import "../../modules/_base.scss";
+/*Features section*/
+.b-features{
+    text-align:center;
+}
+
+.b-features__description{
+    max-width:570px;
+    margin:0 auto 30px;
+    font-weight:700;
+
+    @include media($desktop){
+        @include font-size(18px);
+        line-height:1.55;
+    }
+}
+
+.b-features__title{
+    @extend .g-title;
+    margin-bottom:20px;
+    @include font-size(26px);
+    text-transform:uppercase;
+}
+
+.b-features__item{
+    width:220px;
+    margin:0 auto $project-line-height;
+    line-height:1;
+}
+
+.b-features__icon{
+    display:block;
+    margin:0 auto 20px;
+    @include size(136px);
+    border-radius:50%;
+    @include linear-gradient(to top, #505eb5, #3b4793);
+    color:#fff;
+    position:relative;
+    @include font-size(64px);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
+    i{
+        position:absolute;
+        top:50%; left:50%;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+.b-features__text{
+    font-family:$font-alt;
+    line-height:1.3;
+}
+

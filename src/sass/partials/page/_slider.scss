@@ -1,0 +1,152 @@
+﻿@import "../../modules/_base.scss";
+/*Main Slider*/
+.main-slider{
+    overflow:hidden;//обрежем "лишние" элементы до загрузки js
+    font-family:$font-alt;
+    color:#212121;
+
+    .bx-wrapper{
+        max-width:1400px !important;
+
+        .bx-controls-direction a{
+            top:10px;
+            margin-top:0;
+
+            @include media($tablet){
+                top:50%;
+                margin-top:-31px;
+            }
+        }
+    }
+}
+
+
+.main-slider,
+.main-slider__link{
+    position:relative;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:45.52083%;//960x437 - пропорция слайдера для мелких разрешений
+    }
+
+    @include media(min-width 60em){//далее - слайдер фиксированной высоты
+        height:437px;
+
+        &:after{
+            display:none;
+        }
+    }
+}
+
+.main-slider__inner{
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+}
+
+.main-slider__list{
+    @extend .g-clearlist;
+}
+.main-slider__item{
+}
+.main-slider__link{
+    display:block;
+    max-width:1400px;
+    margin:0 auto;
+    background:#f2f2f2;
+    text-decoration:none;
+    color:#212121;
+}
+
+.main-slider__table{
+    @extend .g-as-table;
+}
+.main-slider__cell{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.main-slider__img{
+    @extend .main-slider__inner; //сами картинки пропишем инлайн-стилями
+    background-position:center center;
+    background-repeat:no-repeat;
+    z-index:1;
+}
+
+.main-slider__img--sm{
+    @include media(min-width 60em){
+        display:none;
+    }
+}
+
+.main-slider__img--xl{
+    display:none;
+    @include media(min-width 60em){
+        display:block;
+    }
+}
+
+.main-slider__content{
+    padding:10px 0 10px 35px;
+    position:relative;
+    z-index:2; //над слоями с изображениями
+
+    @include media($small){
+        width:75%;
+    }
+
+    @include media($desktop){
+        width:50%;
+        padding-left:0;
+    }
+}
+
+.main-slider__title,
+.main-slider__subtitle{
+    color:#212121;
+    line-height:1.1;
+}
+
+.main-slider__title{
+    display:block;
+    margin-bottom:15px;
+    font-weight:600;
+    text-transform:uppercase;
+    background:rgba(#dedede, .6);
+    @include font-size(26px);
+
+
+    @include media($desktop){
+        @include font-size(53px);
+        background:none;
+    }
+}
+
+.main-slider__subtitle,
+.main-slider__text{
+    background:rgba(#dedede, .6);
+    display:none;
+
+    @include media($tablet){
+        display:block;
+    }
+
+    @include media($desktop){
+        background:none;
+    }
+}
+
+.main-slider__subtitle{
+    @include font-size(26px);
+    font-weight:200;
+    margin-bottom:15px;
+
+    @include media($desktop){
+        @include font-size(32px);
+    }
+}
+
+.main-slider__text{
+    @include font-size(18px);
+}
