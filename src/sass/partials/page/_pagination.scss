@@ -1,0 +1,42 @@
+﻿@import "../../modules/_base.scss";
+/*Pagination*/
+.b-pagination{
+    margin-bottom:30px;
+    font-size:0;
+    font-family:$font-alt;
+    text-align:center;
+}
+.b-pagination__item{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    @include font-size(15px);
+    width:35px;
+    color:$text-color;
+    text-decoration:none;
+    text-align:center;
+    background:#ededed;
+
+    &:hover,
+    &:active,
+    &.current{
+        background:$primary;
+        color:#fff;
+    }
+
+    &.current{
+        cursor:default;
+    }
+}
+.b-pagination__item--prev{
+    width:30px;
+    margin-right:2px;
+    border-top-left-radius:$border-radius;
+    border-bottom-left-radius:$border-radius;
+}
+.b-pagination__item--next{
+    width:30px;
+    margin-left:2px;
+    border-top-right-radius:$border-radius;
+    border-bottom-right-radius:$border-radius;
+}

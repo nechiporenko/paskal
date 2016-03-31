@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
 .g-title{
     display:block;
     @include font-size(26px);
+    text-transform:uppercase;
 }
 
 .g-subtitle{

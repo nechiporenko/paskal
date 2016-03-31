@@ -66,9 +66,7 @@
 
 .page__title{
     @extend .g-title;
-    @include font-size(26px);
     padding-bottom:20px;
     border-bottom:2px solid $primary-alt;
-    text-transform:uppercase;
 }
 

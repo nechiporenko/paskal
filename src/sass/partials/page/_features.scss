@@ -19,8 +19,6 @@
 .b-features__title{
     @extend .g-title;
     margin-bottom:20px;
-    @include font-size(26px);
-    text-transform:uppercase;
 }
 
 .b-features__item{

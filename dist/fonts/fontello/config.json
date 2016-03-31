@@ -239,6 +239,18 @@
       "css": "down-dir",
       "code": 59430,
       "src": "entypo"
+    },
+    {
+      "uid": "1d35198f5190ec004dd4ec742fbe19ca",
+      "css": "right",
+      "code": 59431,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "c21d309f797d3644dc8d28c4617738ce",
+      "css": "left",
+      "code": 59432,
+      "src": "mfglabs"
     }
   ]
 }
