@@ -55,11 +55,6 @@
     top:15px;
     right:15px;
     text-decoration:none;
-    color:$text-color;
+    color:$primary-alt;
     @include font-size(20px);
-
-    &:hover,
-    &:active{
-        color:$primary-alt;
-    }
 }

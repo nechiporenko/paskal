@@ -1,0 +1,41 @@
+﻿@import "../../modules/_base.scss";
+/*Single post*/
+.b-post{
+    @extend .page__grid;
+    max-width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    @extend .g-resp-text;
+}
+
+.b-post__title{
+    @extend .g-subtitle;
+    line-height:1.3;
+    padding-bottom:15px;
+    margin-bottom:15px;
+    border-bottom:1px solid $border-color;
+    letter-spacing:2px;
+}
+
+.b-post__date{
+    @extend .news-list__date;
+    font-family:$font-alt;
+}
+
+.b-post__meta{
+    @extend .g-clearfix;
+    dt, dd{
+        float:left;
+    }
+
+    dt{
+        margin-right:10px;
+        clear:both;
+        font-weight:400;
+    }
+
+    dd{
+        margin:0;
+        font-weight:600;
+    }
+}
