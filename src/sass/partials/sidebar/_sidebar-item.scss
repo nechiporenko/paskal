@@ -1,1 +1,35 @@
 ﻿@import "../../modules/_base.scss";
+/*Sidebar item (info block)*/
+.b-item{}
+.b-item__thumb{
+    &:hover,
+    &:active{
+        .b-item__img{
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+.b-item__img{
+    @include transition(box-shadow .3s ease);
+}
+
+.b-item__title{
+    display:block;
+    margin:15px 0 8px;
+    line-height:1.1;
+    text-decoration:none;
+    @include font-size(21px);
+    color:$primary-alt;
+    font-family:$font-alt;
+    font-weight:400;
+
+    a{
+        color:$primary-alt;
+        text-decoration:none;
+
+        &:hover,
+        &:active{
+            color:$primary;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+﻿@import "../../modules/_base.scss";
+/*Text page grid*/
+.page__content{ //для main
+    padding:30px 0;
+    @include font-size($project-font-size);
+    line-height:strip-units($project-line-height/$project-font-size);
+    position:relative;
+
+    b, strong{
+        font-weight:700;
+    }
+
+    @include media($desktop){
+        min-height:500px;
+
+        &:after{
+            content:'';
+            display:block;
+            position:absolute;
+            left:0; bottom:0;
+            width:100%;
+            height:500px;
+            z-index:-1;
+            background:url(../img/page-bg.png) center top no-repeat;
+        }
+        
+    }
+}
+
+.page__grid{
+    margin-bottom:30px;
+    @extend .g-clearfix;
+
+    @include media($desktop){
+        padding-top:15px;
+        margin-bottom:50px;
+    }
+}
+
+.page__main,
+.page__side{
+    @extend .g-column;
+    @extend .g-resp-text;
+
+    @include media($tablet){
+        width:(100%-$grid-gutter)/2;
+    }
+}
+
+.page__main{
+    @include media($desktop){
+        padding-right:30px;
+    }
+}
+
+.page__side{
+    @include media($tablet){
+        margin-left:$grid-gutter;
+    }
+    @include media($desktop){
+        padding-left:70px;
+    }
+}
+
+.page__title{
+    @extend .g-title;
+    @include font-size(26px);
+    padding-bottom:20px;
+    border-bottom:2px solid $primary-alt;
+    text-transform:uppercase;
+}
+
