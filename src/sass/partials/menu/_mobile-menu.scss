@@ -31,6 +31,12 @@
 .m-menu__item{
     font-size:rem(16px);
     position:relative;
+
+    &.current{
+        & > .m-menu__link{
+            color:$primary-alt;
+        }
+    }
 }
 
 
@@ -44,8 +50,7 @@
     text-decoration:none;
 
     &:hover,
-    &:active,
-    &.current{
+    &:active{
         color:$primary-alt;
     }
 }

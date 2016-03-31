@@ -15,10 +15,6 @@
         display:block;
     }
 
-    &:hover,
-    &:active{
-        color:$primary;
-    }
 
     &.active{
         color:$primary;

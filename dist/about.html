@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title>About Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -33,12 +33,12 @@
                     <a href="#!" class="b-callback__link" data-modal="#callback">Заказать обратный звонок</a>
                 </div>
                 <!--/header callback end-->
-                <a href="cart.html" class="b-cartlink active">
+                <a href="cart.html" class="b-cartlink">
                     <span class="b-cartlink__icon">
                         <i class="icomoon-cart-fill"></i>
                     </span>
                     <span class="b-cartlink__text">В вашей корзине</span>
-                    <span class="b-cartlink__count">2 товара</span>
+                    <span class="b-cartlink__count">0 товаров</span>
                 </a>
 
                 <ul class="b-lang js-lang">
@@ -72,10 +72,10 @@
                     <!--/mobile buttons end-->
                     <!--desktop menu start-->
                     <ul class="h-menu">
-                        <li class="h-menu__item current">
+                        <li class="h-menu__item">
                             <a href="index.html" class="h-menu__link">Главная</a>
                         </li>
-                        <li class="h-menu__item">
+                        <li class="h-menu__item current">
                             <a href="about.html" class="h-menu__link">О компании</a>
                         </li>
                         <li class="h-menu__item">
@@ -235,95 +235,84 @@
         </div>
     </header>
     
-    <!--main slider start-->
-    <div class="main-slider">
-        <div class="main-slider__inner">
-            <ul class="main-slider__list js-slider">
-                <li class="main-slider__item">
-                    <a href="#!" class="main-slider__link">
-                        <div class="main-slider__inner">
-                            <div class="main-slider__img main-slider__img--sm" style="background-image:url(img/slider/slider01-sm.jpg)"></div>
-                            <div class="main-slider__img main-slider__img--xl" style="background-image:url(img/slider/slider01-xl.jpg)"></div>
-                            <div class="main-slider__table">
-                                <div class="main-slider__cell">
-                                    <div class="g-container">
-                                        <div class="main-slider__content">
-                                            <span class="main-slider__title">Мы управляем силой</span>
-                                            <span class="main-slider__subtitle">У нас вы можете купить:</span>
-                                            <p class="main-slider__text">Узнаете о видах, способах и условиях приминения пневматики</p>
-                                            <span class="g-btn g-btn--alt g-btn--alt">Подробнее</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="main-slider__item">
-                    <a href="#!" class="main-slider__link">
-                        <div class="main-slider__inner">
-                            <div class="main-slider__img main-slider__img--sm" style="background-image:url(img/slider/slider02-sm.jpg)"></div>
-                            <div class="main-slider__img main-slider__img--xl" style="background-image:url(img/slider/slider02-xl.jpg)"></div>
-                            <div class="main-slider__table">
-                                <div class="main-slider__cell">
-                                    <div class="g-container">
-                                        <div class="main-slider__content">
-                                            <span class="main-slider__title">Мы управляем силой</span>
-                                            <span class="main-slider__subtitle">У нас вы можете купить:</span>
-                                            <p class="main-slider__text">Узнаете о видах, способах и условиях приминения пневматики</p>
-                                            <span class="g-btn g-btn--alt g-btn--alt">Подробнее</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--/main slider end-->
-
     <!--main content start-->
     <main class="page__content">
         <div class="g-container">
+            <!--breadcrumbs start-->
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    О компании
+                </li>
+            </ol>
+            <!--/breadcrumbs end-->
+
             <!--page grid start-->
             <div class="page__grid">
                 <article class="page__main">
-                    <h1 class="page__title">Предлагаем качественную продукцию</h1>
-                    <p><b>ООО «Paskal»</b> — стремительно развивающаяся компания, осуществляющая поставки в Украину гидрооборудования (гидрораспределитель, гидронасос, гидромотор, маслостанция как питающий элемент в гидроприводах и т.д.), пневматического (пневмоцилиндр, распределитель, фильтр-регулятор и т.д.), насосного оборудования (насосы мембранные, аксиально-поршневые, пластинчатые), охлаждающего (теплообменник)  и многое другое ведущих мировых производителей.</p>
-                    <p>Прямо сейчас Вы имеете возможность получить оборудование от официального представителя компании HID-TEK, HIDROCEL, RANPump — производители промышленного оборудования в Турции, Южной Европе и Азии под торговой маркой "Winman", "Freeway", HIDROCEL, RANPump, а это значит, что именно у нас в наличии оборудование, что изготавливается на крупнейших заводах в Турции, Италии и отвечает европейским стандартам. Вы получаете высокое качество обслуживания, надежное оборудование в кратчайшие сроки поставки по доступным ценам.</p>
+                    <h1 class="page__title">О компании</h1>
+                    <p class="g-large-text">
+                        <b>
+                            ООО «Paskal» - эксклюзивный предста&shy;витель компаний <em><span class="g-brand-color">«Hid-Tek ltd» (Turkey), «Hidrocel» (Turkey), «RanPump» (Turkey)</span></em> в Украине, комплексный поставщик гидравлических и пневматических решений.
+                        </b>
+                    </p>
+                    <p>Компания была основана в 2007 году для удовлетворения потребностей украинской промышленности качественным и доступным оборудованием. В каталогах компании представлен широкий спектр гидравлических и пневматических комплектующих для станочного оборудования, мобильной гидравлики, строительного, сельскохозяйственного и автомобильного оборудования.</p>
+                    <p>Компания постоянно увеличивает и без того не малый склад с более чем 3000 различных позиций гидравлического, пневматического и насосного оборудования. В период бизнес отношений между заказчиком и компанией, под заказчика формируется отдельный от общего склад, на котором постоянно имеются в наличие необходимые заказчику комплектующие и запчасти.</p>
+                    <p>Персонал компании ООО «Paskal» – это квалифицированные, грамотные и имеющие в данном направлении образование инженеры, готовые всегда дать совет для решения любых трудностей, возникающих у заказчика в процессе сотрудничества. У нас большой опыт в проектировании гидравлических и пневматических систем под ключ любой сложности для пищевой, легкой и тяжелой промышленности, а так же модификации и модернизации существующих систем.</p>
+                    <p>Дирекция прежде всего ведет политику направленную на удовлетворение потребностей клиентов качественным товаром в самые сжатые сроки по наилучшим ценам, во вторую очередь на постоянное развитие и расширение возможностей фирмы.</p>
                 </article>
 
                 <aside class="page__side">
                     <figure class="b-item">
-                        <a href="catalog.html" class="b-item__thumb">
-                            <img src="img/page/item01.jpg" class="b-item__img" alt="Product" />
-                        </a>
-                        <figcaption class="b-item__description">
-                            <h2 class="b-item__title">
-                                <a href="catalog.html">Маслостанции</a>
-                            </h2>
-                            
-                            <p>Исполнительный уровень включает в себя те элементы гидрооборудования, которые превращают...</p>
-                        </figcaption>
+                        <img src="img/page/item01.jpg" class="b-item__img" alt="Product" />
                     </figure>
 
-                    <figure class="b-item">
-                        <a href="catalog.html" class="b-item__thumb">
-                            <img src="img/page/item02.jpg" class="b-item__img" alt="Product" />
-                        </a>
-                        <figcaption class="b-item__description">
-                            <h2 class="b-item__title">
-                                <a href="catalog.html">Гидравлика</a>
-                            </h2>
-                            <p>Как элемент питания в гидроприводах используют различные по характеристикам и комплектации...</p>
-                        </figcaption>
-                    </figure>
+                    <p>
+                        <b>Продукцию компании ООО «Paskal» можно поделить на следующие группы:</b>
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— гидравлика:</span></em></b> изготовление гидроцилиндров, фильтры, гидрораспределители, гидрозамки, клапаны, дроссели, плиты монтажные, фитинги, трубопроводы, зажимы – скобы, гидронасосы, моторы, аккумуляторы, аксессуары и прочее;
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— мобильная гидравлика:</span></em></b> секционные распределители, насосы, моторы, коробки отбора мощности,
+                        аксессуары и прочее;
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— пневматика:</span></em></b> блоки подготовки воздуха (фильтр-регулятор), дроссели, клапаны, пневмораспределители, трубы полиуретановые, фитинги, аксессуары и прочее;
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— маслостанции</span></em></b>, согласно технического задания заказчика такие как: «мини» маслостанции с расходом до 15 л/мин и давлением до 240 бар, маслостанции до 350 бар и расходом ограниченным только рабочим объемом самых больших насосов, которые сейчас выпускаются, а также маслостанции высокого давления до 700 бар включительно; делается паспорт, чертежи исходя из разработанной 3-D модели
+                        и полное техническое описание.
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— теплообменники</span></em></b> для охлаждения рабочей жидкости (водяные и воздушные);
+                    </p>
+                    <p>
+                        <b><em><span class="g-brand-color">— мембранные насосы</span></em></b> (диафрагменные) – для перекачки агрессивных (кислоты) и не агрессивных сред с большой подачей.
+                    </p>
                 </aside>
             </div>
             <!--/page grid end-->
         </div><!--/g-container-->
+
+        <!--advantages section start-->
+        <section class="b-advantage">
+            <div class="g-container">
+                <div class="b-advantage__inner">
+                    <h2 class="b-advantage__title">Преимущества компании перед конкурентами:</h2>
+                    <p>— Быстрые поставки оборудования (в течении 5- 7 дней) и по разумным ценам;</p>
+                    <p>— Обработка заказов по телефону, электронной почте и других средств связи;</p>
+                    <p>— Технические консультации потребителей, подбор аналогов;</p>
+                    <p>— Разработка и изготовление машин на базе гидравлического и пневматического оборудования (гидравлические станции, пневматические и гидравлические пресса, системы автоматизации производства и др.);</p>
+                    <p>— Постоянно имеются на складе все наиболее запрашиваемые позиции.</p>
+                </div>
+            </div>
+        </section>
+        <!--advantages section end-->
 
         <!--features section start-->
         <section class="b-features">
@@ -369,6 +358,7 @@
             </div>
         </section>
         <!--/features section end-->
+
     </main>
     <!--/main content end-->
 
@@ -391,10 +381,10 @@
             <li class="m-menu__item">
                 <label  class="m-menu__label">Меню</label>
             </li>
-            <li class="m-menu__item current">
+            <li class="m-menu__item">
                 <a href="index.html" class="m-menu__link">Главная</a>
             </li>
-            <li class="m-menu__item">
+            <li class="m-menu__item current">
                 <a href="catalog.html" class="m-menu__link">Каталог продукции</a>
             </li>
             <li class="m-menu__item">

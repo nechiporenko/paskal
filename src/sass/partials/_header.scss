@@ -2,13 +2,14 @@
 /*Site Header*/
 .b-header{
     font-family:$font-alt;
+    position:relative;
+    z-index:1000;
 }
 
 .b-header__inner{//на десктопе юудем фиксировать при скролле
     position:relative;
     width:100%;
     top:0; left:0;
-    z-index:1000;
     border-bottom:1px solid $border-color;
     box-shadow:0 2px 4px rgba(#000, .1);
 
