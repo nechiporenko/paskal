@@ -29,7 +29,7 @@ textarea {
     box-shadow: none;
     box-sizing: border-box;
     font-family:$font-alt;
-    @include font-size(14px);
+    @include font-size(18px);
 
     @include placeholder{
         color:#888888;
@@ -43,7 +43,7 @@ textarea {
     }
 
     &:focus{
-        box-shadow:0 6px 3px -3px rgba(#000, .1);
+        box-shadow:0 6px 3px -3px rgba($primary, .5);
     }
 
     &:disabled{
@@ -67,7 +67,7 @@ textarea {
 }
 
 .g-textarea{
-    @include px2rem(min-height, $project-line-height*5);
+    @include px2rem(min-height, $project-line-height*3);
 }
 
 .g-label{

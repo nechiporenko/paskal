@@ -71,6 +71,35 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
     @include font-size(21px);
 }
 
+.g-subtitle--alt{
+    margin-bottom:15px;
+    @include font-size(26px);
+    font-weight:200;
+    color:$primary;
+}
+
+.g-subtitle__icon{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:10px;
+    @include size(40px);
+    border-radius:50%;
+    @include linear-gradient(to top, #505eb5, #3b4793);
+    color:#fff;
+    position:relative;
+    @include font-size(18px);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+
+    i{
+        @extend .g-align;
+    }
+
+    @include media($tablet){
+        @include size(80px);
+        @include font-size(32px);
+    }
+}
+
 .g-large-text{
     font-family:$font-alt;
     font-size:130%;
@@ -99,7 +128,7 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-    @include px2rem(margin, $project-line-height/2 0 $project-line-height/2 30px);
+    @include px2rem(margin, $project-line-height/2 0 $project-line-height/2 22px);
 }
 
 .g-clearlist{

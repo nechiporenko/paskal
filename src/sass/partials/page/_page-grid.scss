@@ -29,13 +29,27 @@
     }
 }
 
-.page__grid{
+.page__grid,
+.page__section{
     margin-bottom:15px;
     @extend .g-clearfix;
 
     @include media($desktop){
         padding-top:15px;
         margin-bottom:30px;
+    }
+}
+
+.page__section{
+    @extend .g-resp-text;
+}
+
+.page__section--alt{
+    padding:30px 0;
+    background:#f9f9f9;
+
+    @include media($desktop){
+        padding:50px 0;
     }
 }
 

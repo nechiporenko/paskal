@@ -39,9 +39,7 @@
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 
     i{
-        position:absolute;
-        top:50%; left:50%;
-        @include transform(translate(-50%, -50%));
+        @extend .g-align;
     }
 }
 

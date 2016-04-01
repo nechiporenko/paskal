@@ -96,6 +96,10 @@
     }
 }
 
+.news-list__intro{
+    font-family:$font-primary;
+}
+
 @include media($tablet){
     .news-list__link{
         float:left;

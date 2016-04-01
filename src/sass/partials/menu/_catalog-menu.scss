@@ -45,7 +45,7 @@
 
 .h-catalog__link{
     display:block;
-    padding:12px 0;
+    padding:14px 0;
     color:#121212;
     text-decoration:none;
     text-transform:uppercase;
@@ -58,7 +58,7 @@
     @include transition-property(color, background-color);
 
     @include media($small){
-        padding:16px 0;
+        padding:18px 0;
         border-bottom:none;
     }
 

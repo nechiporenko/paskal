@@ -7,8 +7,7 @@
     th,
     td {
       @include px2rem(padding, $project-line-height/2 15px);
-      text-align: left;
-      border-bottom: 1px solid $border-color; 
+      
     }
 
     th:first-child,
@@ -17,6 +16,12 @@
     th:last-child,
     td:last-child {
       padding-right: 0; }
+}
+
+.g-table--bordered{
+    th, td{
+        border-bottom: 1px solid $border-color; 
+    }
 }
 
 /*Make table scrollable on small screens*/
