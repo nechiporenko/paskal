@@ -1,0 +1,46 @@
+﻿@import "../../modules/_base.scss";
+/*Catalog filters*/
+.b-filter{
+    padding:20px 0;
+    margin:-30px 0 30px;
+    background:#f9f9f9;
+    font-family:$font-alt;
+}
+
+.b-filter__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+
+.b-filter__item{
+    @extend .g-column;
+    padding:5px 0;
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(3n);
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}
+
+.b-filter__link{
+    color:$text-color;
+    text-decoration:none;
+    @include font-size(14px);
+    &:hover,
+    &:active{
+        color:$primary;
+        text-decoration:underline;
+    }
+}

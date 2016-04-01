@@ -1,4 +1,5 @@
 ﻿@import "../../modules/_base.scss";
+/*Contacts page*/
 .g-map{
     height:320px;
     margin-bottom:30px;
@@ -13,4 +14,9 @@
         overflow: hidden;
         white-space: nowrap;
     }
+}
+
+.page__section--contacts{
+    @extend .page__section--alt;
+    margin-bottom:-30px;
 }
