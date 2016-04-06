@@ -19,8 +19,8 @@ textarea {
     display:inline-block;
     vertical-align:middle;
     width:100%;
-    @include px2rem(margin-bottom, $project-line-height);
-    @include px2rem(padding, 6px 10px);
+    margin-bottom:$project-line-height;
+    padding:6px 0;
     background-color: #fff;
     border:none;
     border-bottom: 1px solid $border-color;

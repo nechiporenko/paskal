@@ -7,6 +7,7 @@
 // Слайдер на главной
 // Модальное окно
 // Маска для телефонного номера
+// Галерея в карточке товара
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -166,9 +167,7 @@ jQuery(document).ready(function ($) {
             var winW = $.viewportW();//ширина экрана
             if (winW >= 1200) {
                 method.hideAll(); //чтобы не осталось субменю, открытых на предыдущем маленьком разрешении, например
-                $btn.unbind('click', method.click).on('click', function (e) {//отключаем обработку клика
-                    e.preventDefault();
-                });
+                $btn.unbind('click', method.click);//отключаем обработку клика - делаем заголовок кликабельным
                 $(this).children('a').addClass('active').next('ul:first').fadeIn(200);
             };
         }, function () {
@@ -313,5 +312,40 @@ jQuery(document).ready(function ($) {
     // Маска для телефонного номера
     //---------------------------------------------------------------------------------------
     $('.js-phone').mask('+380 99 999-99-99');
+
+    //
+    // Галерея в карточке товара
+    //---------------------------------------------------------------------------------------
+    function initGallery() {
+        var $target = $('.js-gallery-target').find('img'), //картинка в блоке предпросмотра
+            index = 0; //индекс картинки в галерее
+
+        $('.js-gallery-large').find('a').lightbox();//натравили лайтбокс на скрытый список крупных изображений
+
+        $('.js-gallery').find('li').filter(':first').find('figure').addClass('active');//добавили класс к первой картинке
+
+        $('.js-gallery').on('click', 'figure', function () {//клик по превьюшке - изменим картинку в блоке предпросмотра
+            var $el = $(this);
+            if ($el.hasClass('active')) {
+                return false;
+            } else {
+                var src = $el.data('img');//взяли картинку среднего размера
+                if (src) {
+                    $('.js-gallery figure').removeClass('active');
+                    $el.addClass('active');
+                    $target.attr('src', src);//отправили в блок предпросмотра
+                    index = $(this).parent('li').index();//изменили индекс
+                };
+            };
+        });
+
+        $('.js-gallery-target').on('click', function () {
+            $('.js-gallery-large li').eq(index).children('a').click();//откроем большую картиеку в лайтбоксе
+        });
+    }
+
+    if ($('.js-gallery').length > 0) {
+        initGallery();
+    }
     
 });
