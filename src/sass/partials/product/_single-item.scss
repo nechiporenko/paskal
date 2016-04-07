@@ -181,12 +181,5 @@
 
 .product-thumb,
 .product-thumb-list__inner{
-    @include transition-property(border-color, box-shadow);
-    @include transition-duration(.25s);
-
-    &:hover,
-    &:active{
-        border-color:$primary;
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+    @extend .g-shadow-hover;
 }

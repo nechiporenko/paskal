@@ -1,0 +1,47 @@
+﻿@import "../../modules/_base.scss";
+/*Product slider*/
+$controls: '../img/slider/arrows.png';
+.product-slider{
+    .bx-wrapper{
+        .bx-prev {
+		    left: -30px;
+            background: url($controls) no-repeat 0 -130px;
+
+            @include media($large){
+                left:-45px;
+            }
+	    }
+	    .bx-next {
+		    right: -30px;
+            background: url($controls) no-repeat 0 -195px;
+
+            @include media($large){
+                right:-45px;
+            }
+	    }
+    }
+}
+.product-slider__list{
+    @extend .g-clearfix;
+    @extend .g-clearlist;
+}
+
+.product-slider__item{
+    float:left;    
+}
+
+.js .product-slider__item{
+    width:222px;
+    margin-right:24px;
+
+    .b-product{
+        margin-bottom:0;
+    }
+}
+
+.no-js {
+    .product-slider__item{
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}

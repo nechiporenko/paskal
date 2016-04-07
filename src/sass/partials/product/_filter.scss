@@ -2,9 +2,28 @@
 /*Catalog filters*/
 .b-filter{
     padding:20px 0;
-    margin:-30px 0 30px;
+    margin:0 0 30px;
     background:#f9f9f9;
     font-family:$font-alt;
+}
+
+.b-filter__btn{
+    @extend .g-clearbutton;
+    margin-bottom:15px;
+    color:$title-color;
+    border-bottom:1px dashed $title-color;
+    @include font-size(14px);
+    color:$title-color;
+
+    &:hover,
+    &:focus{
+        color:$primary;
+        border-color:$primary;
+    }
+}
+
+.no-js .b-filter__btn{
+    display:none;
 }
 
 .b-filter__list{
@@ -15,6 +34,7 @@
 .b-filter__item{
     @extend .g-column;
     padding:5px 0;
+    line-height:1.2;
 
     @include media($small){
         @include span-columns(6);
@@ -37,7 +57,7 @@
 .b-filter__link{
     color:$text-color;
     text-decoration:none;
-    @include font-size(14px);
+    @include font-size(13px);
     &:hover,
     &:active{
         color:$primary;

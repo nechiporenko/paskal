@@ -8,6 +8,8 @@
 // Модальное окно
 // Маска для телефонного номера
 // Галерея в карточке товара
+// Слайдеры товаров
+// Покажем / спрячем фильтр в каталоге
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -180,9 +182,6 @@ jQuery(document).ready(function ($) {
 
     })();
 
-    
-
-
     //
     // Мобильное меню
     //---------------------------------------------------------------------------------------
@@ -219,7 +218,7 @@ jQuery(document).ready(function ($) {
     //
     // Кнопка скролла страницы
     //---------------------------------------------------------------------------------------
-    var initPageScroller = (function () {
+    (function () {
         var $scroller = $('<div class="scroll-up-btn"><i class="icon-up-open-big"></i></div>');
         $body.append($scroller);
         $window.on('scroll', function () {
@@ -233,8 +232,7 @@ jQuery(document).ready(function ($) {
             $('html, body').animate({ scrollTop: 0 }, 800);
             return false;
         });
-    }());
-
+    })();
 
     //
     // Слайдер на главной
@@ -316,7 +314,7 @@ jQuery(document).ready(function ($) {
     //
     // Галерея в карточке товара
     //---------------------------------------------------------------------------------------
-    function initGallery() {
+    function initProductGallery() {
         var $target = $('.js-gallery-target').find('img'), //картинка в блоке предпросмотра
             index = 0; //индекс картинки в галерее
 
@@ -345,7 +343,111 @@ jQuery(document).ready(function ($) {
     }
 
     if ($('.js-gallery').length > 0) {
-        initGallery();
+        initProductGallery();
     }
-    
+
+    //
+    // Слайдеры товаров
+    //---------------------------------------------------------------------------------------
+    function initProductSlider(el) {
+        var $slider = el,
+            rtime, //переменные для пересчета ресайза окна с задержкой delta
+            timeout = false,
+            delta = 200,
+            method = {};
+
+        method.getSliderSettings = function () {
+            var setting,
+                    settings1 = {
+                        maxSlides: 1,
+                        minSlides: 1,
+                    },
+                    settings2 = {
+                        maxSlides: 2,
+                        minSlides: 2,
+                    },
+                    settings3 = {
+                        maxSlides: 3,
+                        minSlides: 3,
+                    },
+                    settings4 = {
+                        maxSlides: 4,
+                        minSlides: 4,
+                    },
+                    common = {
+                        slideWidth: 222,
+                        slideMargin: 24,
+                        moveSlides: 1,
+                        auto: false,
+                        pager: false,
+                        mode: 'horizontal',
+                        infiniteLoop: false,
+                        hideControlOnEnd: true,
+                        useCSS: false,
+                    },
+                    winW = $.viewportW();
+            if (winW < 550) {
+                setting = $.extend(settings1, common);
+            }
+            if (winW >= 550 && winW <= 800) {
+                setting = $.extend(settings2, common);
+            }
+            if (winW >= 800 && winW <= 1200) {
+                setting = $.extend(settings3, common);
+            }
+            if (winW > 1200) {
+                setting = $.extend(settings4, common);
+            }
+            return setting;
+        };
+
+        method.reloadSliderSettings = function () {
+            $slider.reloadSlider(method.getSliderSettings());
+        };
+
+        method.endResize = function () {
+            if (new Date() - rtime < delta) {
+                setTimeout(method.endResize, delta);
+            } else {
+                timeout = false;
+                //ресайз окончен - пересчитываем
+                method.reloadSliderSettings();
+            }
+        }
+
+        method.startResize = function () {
+            rtime = new Date();
+            if (timeout === false) {
+                timeout = true;
+                setTimeout(method.endResize, delta);
+            }
+        }
+
+        $slider.bxSlider(method.getSliderSettings());//запускаем слайдер
+
+        $window.bind('resize', method.startResize);//пересчитываем кол-во видимых элементов при ресайзе окна с задержкой .2с
+    };
+
+    if ($('.js-product-slider1').length) { initProductSlider($('.js-product-slider1')); }
+    if ($('.js-product-slider2').length) { initProductSlider($('.js-product-slider2')); }
+
+    //
+    // Покажем / спрячем фильтр в каталоге
+    //---------------------------------------------------------------------------------------
+    function collapseFilter() {
+        var $btn = $('.js-filter-btn'),
+            $filter = $btn.nextAll('.js-filter-target');
+        $btn.on('click', function () {
+            if ($btn.hasClass('active')) {
+                $btn.removeClass('active');
+                $filter.slideDown(400);
+            } else {
+                $btn.addClass('active');
+                $filter.slideUp(400);
+            }
+        });
+    };
+    if ($('.js-filter-btn').length) {
+        collapseFilter();
+    }
 });

@@ -41,3 +41,7 @@
 .icon-right:before { content: '\e827'; } /* '' */
 .icon-left:before { content: '\e828'; } /* '' */
 .icon-file-pdf:before { content: '\e829'; } /* '' */
+.icon-file-excel:before { content: '\e82a'; } /* '' */
+.icon-file-word:before { content: '\e82b'; } /* '' */
+.icon-doc-text:before { content: '\e82c'; } /* '' */
+.icon-filter:before { content: '\e82d'; } /* '' */

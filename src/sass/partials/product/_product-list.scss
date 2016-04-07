@@ -1,0 +1,27 @@
+﻿@import "../../modules/_base.scss";
+/*Product list*/
+.product-list{
+    list-style-type:none;
+    padding:0;
+    @extend .g-clearfix;
+}
+.product-list__item{
+    @extend .g-column;
+
+    @include media($mobile){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($tablet){
+        @include omega-reset(2n);
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    @include media($desktop){
+        @include omega-reset(3n);
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}

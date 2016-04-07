@@ -66,6 +66,11 @@ h1, h2, h3, h4, h5, h6, .g-title, .g-subtitle{
     text-transform:uppercase;
 }
 
+.g-title--compact{
+    padding-top:15px;
+    margin-bottom:15px;
+}
+
 .g-subtitle{
     display:block;
     @include font-size(21px);

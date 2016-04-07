@@ -28,6 +28,10 @@
             text-align:center;
         }
     }
+
+    @include media($tablet){
+        @include font-size(14px);
+    }
 }
 
 
@@ -42,13 +46,18 @@
 
     table{
         margin-bottom:0;
+
+        th, td{
+            white-space:nowrap;
+        }
     }
 
     @include media($tablet){
         border:none;
-
-        .g-table{
-            @include font-size(14px);
+        table{
+            th, td{
+                white-space:normal;
+            }
         }
     }
 }

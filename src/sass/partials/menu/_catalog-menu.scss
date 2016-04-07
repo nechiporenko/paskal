@@ -157,3 +157,15 @@
         color:$primary-alt;
     }
 }
+
+@include media($desktop){
+    .no-js{
+        .h-catalog__item{
+            &:hover{
+                & > .h-subcatalog{
+                    display:block;
+                }
+            }
+        }
+    }
+}
