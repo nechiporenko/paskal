@@ -402,7 +402,7 @@ jQuery(document).ready(function ($) {
         };
 
         method.reloadSliderSettings = function () {
-            $slider.reloadSlider(method.getSliderSettings());
+            $slider.reloadSlider($.extend(method.getSliderSettings(), { startSlide: $slider.getCurrentSlide() }));
         };
 
         method.endResize = function () {
