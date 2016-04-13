@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gallery Page</title>
+    <meta name="description" content="Page Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/app.css">       
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="page">
+    <header class="b-header">
+        <!--header main start-->
+        <div class="b-header__main">
+            <div class="g-container">
+                <a href="index.html" class="b-header__logo">Paskal</a>
+                <!--header callback start-->
+                <div class="b-callback">
+                    <span class="b-callback__icon">
+                        <i class="icomoon-phone-fill"></i>
+                    </span>
+                    <a href="tel:+380445013548" class="b-callback__phone">(044) 501 35 48</a>
+                    <a href="tel:+380443610635" class="b-callback__phone">(044) 361 06 35</a>
+                    <a href="#!" class="b-callback__link" data-modal="#callback">Заказать обратный звонок</a>
+                </div>
+                <!--/header callback end-->
+                <a href="cart.html" class="b-cartlink">
+                    <span class="b-cartlink__icon">
+                        <i class="icomoon-cart-fill"></i>
+                    </span>
+                    <span class="b-cartlink__text">В вашей корзине</span>
+                    <span class="b-cartlink__count">0 товаров</span>
+                </a>
+
+                <ul class="b-lang js-lang">
+                    <li class="b-lang__switcher">
+                        <button class="b-lang__btn js-lang-btn">Рус <i class="icon-down-dir"></i></button>
+                        <ul class="b-lang__menu">
+                            <li class="b-lang__item">
+                                <a href="#" hreflang="uk" class="b-lang__link">Украинский</a>
+                            </li>
+                            <li class="b-lang__item current">
+                                <a href="#" hreflang="ru" class="b-lang__link">Русский</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/header main end-->
+
+        <div class="b-header__inner">
+            <!--header main menu start-->
+            <nav class="b-header__menu">
+                <div class="g-container">
+                    <!--mobile buttons start-->
+                    <button type="button" class="b-header__btn b-header__btn--menu js-mmenu-toggle"><i class="icon-menu"></i></button>
+                    <button type="button" class="b-header__btn b-header__btn--callback" data-modal="#callback"><i class="icomoon-phone-fill"></i></button>
+                    <a href="cart.html" class="b-header__btn b-header__btn--cart">
+                        <i class="icomoon-cart-fill"></i>
+                        <span class="b-header__btncount">0</span>
+                    </a>
+                    <!--/mobile buttons end-->
+                    <!--desktop menu start-->
+                    <ul class="h-menu">
+                        <li class="h-menu__item">
+                            <a href="index.html" class="h-menu__link">Главная</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="about.html" class="h-menu__link">О компании</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="news.html" class="h-menu__link">Новости</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="delivery.html" class="h-menu__link">Доставка и оплата</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="gallery.html" class="h-menu__link">Галерея</a>
+                        </li>
+                        <li class="h-menu__item">
+                            <a href="contacts.html" class="h-menu__link">Контакты</a>
+                        </li>
+                    </ul>
+                    <!--/desktop menu end-->
+                    <!--search form start-->
+                    <form class="b-search">
+                        <input type="text" class="b-search__input" placeholder="Поиск" />
+                        <button type="submit" class="b-search__btn"><i class="icon-search"></i></button>
+                    </form>
+                    <!--/search form end-->
+                </div>
+            </nav>
+            <!--/header main menu end-->
+            <!--header catalog menu start-->
+            <nav class="b-header__catalog">
+                <div class="g-container">
+                    <ul class="h-catalog js-menu">
+                        <li class="h-catalog__item">
+                            <a href="catalog.html" class="h-catalog__link">Гидравлика <i class="icon-down-dir"></i></a>
+                            <ul class="h-subcatalog">
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Ремонт и изготовление гидроцилиндров</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Гидрораспределители</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Насосы гидравлические</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Клапаны давления</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Регуляторы расхода</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Обратные клапаны (гидрозамки)</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Гидромоторы</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Теплообменник (охладитель)</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Фильтры</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Аккумуляторы</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Плиты монтажные</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Соединения и шланги</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Аксессуары для гидравлики</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Делители, сумматоры потока</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Гидравлическое масло</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Гидравлические уплотнения</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="h-catalog__item">
+                            <a href="catalog.html" class="h-catalog__link">Пневматика <i class="icon-down-dir"></i></a>
+                            <ul class="h-subcatalog">
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Изготовление пневмоцилиндров</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Пневмораспределители</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Подготовка сжатого воздуха</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Фитинги, трубки пневматические</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Аксессуары пневматические</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Диагностика, наладка оборудования и систем</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Пневматические уплотнения</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Пневматическое масло</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="h-catalog__item">
+                            <a href="catalog.html" class="h-catalog__link">Маслостанции <i class="icon-down-dir"></i></a>
+                            <ul class="h-subcatalog">
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Промышленные маслостанции</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Минимаслостанции</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Мобильные станции</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Гидростанции под заказ</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Насосные агрегаты</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Станции смазки</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Ремонт маслостанций</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Ремонт гидропрессов</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Ремонт гидравлических систем</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Диагностика гидросистем</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Наладка гидравлического оборудования</a>
+                                </li>
+                                <li class="h-subcatalog__item">
+                                    <a href="catalog.html" class="h-subcatalog__link">Баки для маслостанций</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--/header catalog menu end-->
+        </div>
+    </header>
+    
+    <!--main content start-->
+    <main class="page__content">
+        <div class="g-container">
+            <!--breadcrumbs start-->
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Галерея
+                </li>
+            </ol>
+            <!--/breadcrumbs end-->
+            
+            <section class="page__section">
+                <h1 class="g-title">Галерея</h1>
+                <!--tabs-->
+                <ul class="tabs js-tabs">
+                    <li class="tabs__item">
+                        <a href="#photo" class="tabs__link">Фото</a>
+                    </li>
+                    <li class="tabs__item">
+                        <a href="#video" class="tabs__link">Видео</a>
+                    </li>
+                </ul>
+                <div class="tabs__content js-tabs-content">
+                    <div class="tabs__inner" id="photo">
+                        <!--photo gallery start-->
+                        <ul class="gallery js-photogallery">
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="img/del/gallery-01-xl.jpg" class="gallery__thumb" data-caption="Международный промышленный форум 22-25 ноября 2015">
+                                        <img src="img/del/gallery-01-md.jpg" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Международный промышленный форум 22-25 ноября 2015</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="img/del/gallery-02-xl.jpg" class="gallery__thumb" data-caption="Подпись к изображению">
+                                        <img src="img/del/gallery-02-md.jpg" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Подпись к изображению</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="img/del/gallery-03-xl.jpg" class="gallery__thumb" data-caption="Подпись к изображению">
+                                        <img src="img/del/gallery-03-md.jpg" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Подпись к изображению</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="img/del/gallery-04-xl.jpg" class="gallery__thumb" data-caption="Подпись к изображению">
+                                        <img src="img/del/gallery-04-md.jpg" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Подпись к изображению</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="img/del/gallery-05-xl.jpg" class="gallery__thumb" data-caption="Подпись к изображению">
+                                        <img src="img/del/gallery-05-md.jpg" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Подпись к изображению</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="http://placehold.it/1024x768" class="gallery__thumb" data-caption="Подпись к изображению">
+                                        <img src="http://placehold.it/320x240" class="gallery__img" alt="Photo" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Подпись к изображению</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--/photo gallery end-->
+                    </div>
+                    <div class="tabs__inner" id="video">
+                        <!--video gallery start-->
+                        <ul class="gallery js-videogallery">
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="https://youtu.be/mawTCv4BvGY" class="gallery__thumb gallery__thumb--video">
+                                        <img src="http://placehold.it/320x180" class="gallery__img" alt="Video Thumb" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Международный промышленный форум 22-25 ноября 2015</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="https://youtu.be/LUaWhZXN08g" class="gallery__thumb gallery__thumb--video">
+                                        <img src="http://placehold.it/320x180" class="gallery__img" alt="Video Thumb" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Название видео</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="gallery__item">
+                                <div class="gallery__inner">
+                                    <a href="https://youtu.be/eHJ7An2CMB4" class="gallery__thumb gallery__thumb--video">
+                                        <img src="http://placehold.it/320x180" class="gallery__img" alt="Video Thumb" />
+                                        <div class="gallery__caption">
+                                            <span class="gallery__title">Название видео</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--/video gallery end-->
+                    </div>
+                </div>
+                <!--/tabs-->
+            </section>
+        </div><!--/g-container-->
+
+        <!--seo text start-->
+        <article class="page__section page__section--alt">
+            <div class="g-container">
+                <h2 class="g-subtitle">Заголовок SEO текста</h2>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Aliquam tincidunt mauris eu risus.</li>
+                    <li>Vestibulum auctor dapibus neque.</li>
+                </ul>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+            </div>
+        </article>
+        <!--/seo text end-->
+
+        <!--features section start-->
+        <section class="b-features">
+            <div class="g-container">
+                <header class="b-features__description">
+                    <h3 class="b-features__title">Мы гарантируем</h3>
+                    <p>Производители промышленного оборудования в Турции, Южной Европе и Азии под торговой маркой <em>"Winman"</em>, <em>"Freeway"</em>, <em>"Hiderocel"</em>, <em>"RANPump"</em></p>
+                </header>
+                <div class="g-row">
+                    <div class="g-col g-col--one-third">
+                        <figure class="b-features__item">
+                            <span class="b-features__icon">
+                                <i class="icomoon-car"></i>
+                            </span>
+                            <figcaption class="b-features__text">
+                                Кратчайшие<br />
+                                сроки поставки
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="g-col g-col--one-third">
+                        <figure class="b-features__item">
+                            <span class="b-features__icon">
+                                <i class="icomoon-ce"></i>
+                            </span>
+                            <figcaption class="b-features__text">
+                                Соответствие<br />
+                                требованиям качества
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="g-col g-col--one-third">
+                        <figure class="b-features__item">
+                            <span class="b-features__icon">
+                                <i class="icomoon-shield"></i>
+                            </span>
+                            <figcaption class="b-features__text">
+                                Высокое качество обслуживания
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/features section end-->
+    </main>
+    <!--/main content end-->
+
+    <!--callback modal window start-->
+    <div class="modal" id="callback">
+        <form class="modal__content">
+            <span class="g-title">Заказать обратный звонок</span>
+            <p>Укажите Ваш номер телефона, и мы перезвоним в течении 20 минут</p>
+
+            <label class="g-label">Номер телефона</label>
+            <input type="text" class="g-input js-phone" />
+            <button type="submit" class="g-btn g-btn--primary"><i class="icomoon-phone-fill"></i>&emsp;Заказать</button>
+        </form>
+    </div>
+    <!--/callback modal window end-->
+
+    <!--video modal start-->
+    <div class="modal" id="videomodal">
+        <div class="modal__content">
+            <div class="g-video-wrap">
+                <iframe width="560" height="315" src="img/logo.png"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--/video modal end-->
+
+    <!--mobile menu start-->
+    <nav class="page__panel js-mmenu">
+        <ul class="m-menu">
+            <li class="m-menu__item">
+                <label  class="m-menu__label">Меню</label>
+            </li>
+            <li class="m-menu__item">
+                <a href="index.html" class="m-menu__link">Главная</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="catalog.html" class="m-menu__link">Каталог продукции</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="about.html" class="m-menu__link">О компании</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="news.html" class="m-menu__link">Новости</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="delivery.html" class="m-menu__link">Доставка и оплата</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="gallery.html" class="m-menu__link">Галерея</a>
+            </li>
+            <li class="m-menu__item">
+                <a href="contacts.html" class="m-menu__link">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+    <!--/mobile menu end-->
+    
+    <footer class="b-footer">
+        <div class="g-container">
+            <div class="g-row">
+                <div class="b-footer__col">
+                    <h6 class="b-footer__title">Контакты ООО «Paskal»:</h6>
+                    <div class="g-row">
+                        <p class="b-footer__addr">
+                            <strong>Юридический адрес:</strong>
+                            <br />
+                            03148, г.Киев,
+                            <br />
+                            Святошинский район,
+                            <br />
+                            ул.Жмеринская 11/1
+                        </p>
+                        <p class="b-footer__addr">
+                            <strong>Физический адрес:</strong>
+                            <br />
+                            03148, г.Киев,
+                            <br />
+                            Святошинский район,
+                            <br />
+                            ул.Жмеринская 11/1, оф.28
+                        </p>
+                    </div>
+                </div><!--/b-footer__col-->
+                <div class="b-footer__col b-footer__col--phones">
+                   <div class="b-footer__inner">
+                       <h6 class="b-footer__title">Телефон:</h6>
+                       <div class="g-row">
+                           <ul class="f-social">
+                               <li class="f-social__item">
+                                   <a href="#" rel="nofollow" target="_blank" class="f-social__link"><i class="icon-vkontakte"></i></a>
+                               </li>
+                               <li class="f-social__item">
+                                   <a href="#" rel="nofollow" target="_blank" class="f-social__link"><i class="icon-facebook"></i></a>
+                               </li>
+                               <li class="f-social__item">
+                                   <a href="#" rel="nofollow" target="_blank" class="f-social__link"><i class="icon-gplus"></i></a>
+                               </li>
+                               <li class="f-social__item">
+                                   <a href="#" rel="nofollow" target="_blank" class="f-social__link"><i class="icon-youtube"></i></a>
+                               </li>
+                           </ul>
+
+                           <div class="b-footer__phones">
+                               <a href="tel:+380443610635" class="b-footer__tel">(044) 361 06 35</a>
+                               <span class="b-footer__info">отдел продаж</span>
+                               <a href="tel:+380443610635" class="b-footer__tel">(044) 501 35 48</a>
+                               <span class="b-footer__info">факс</span>
+                           </div>
+                       </div>
+                   </div>
+                </div><!--/b-footer__col-->
+            </div>
+            <div class="g-row">
+                <div class="g-col g-col--one-half">
+                    <a href="#" class="b-footer__link">
+                        <i class="icomoon-text"></i>
+                        Техническая документация
+                    </a>
+                </div>
+                <div class="g-col g-col--one-half">
+                    <div class="b-footer__copyright">
+                        © 2016 Компания ООО "Paskal"
+                        <br />
+                        Все права защищены.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

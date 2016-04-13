@@ -281,6 +281,12 @@
       "css": "filter",
       "code": 59437,
       "src": "fontawesome"
+    },
+    {
+      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
+      "css": "arrows-ccw",
+      "code": 59438,
+      "src": "entypo"
     }
   ]
 }

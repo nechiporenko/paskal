@@ -1,0 +1,59 @@
+﻿@import "../../modules/_base.scss";
+/*Tabs*/
+.tabs{
+    list-style-type:none;
+    padding:0;
+    font-size:0;
+    border-bottom:1px solid $border-color;
+}
+.tabs__item{
+    display:inline-block;
+    @include font-size(18px);
+    font-family:$font-alt;
+
+    &.current{
+        .tabs__link{
+            background:#fff;
+            color:$primary;
+            cursor:default;
+            &:after{
+                display:block;
+            }
+        }
+    }
+}
+.tabs__link{
+    display:inline-block;
+    border:1px solid $border-color;
+    border-bottom:none;
+    padding:14px 40px;
+    box-sizing:border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:600;
+    @include linear-gradient(to bottom, #fff, #f2f2f2);
+    color:$title-color;
+    line-height:1;
+    position:relative;
+
+    &:after{
+        content:'';
+        height:3px;
+        width:100%;
+        background:#fff;
+        position:absolute;
+        top:100%;
+        left:0;
+        z-index:1;
+        display:none;
+    }
+
+    &:hover,
+    &:active{
+        color:$primary;
+    }
+}
+
+.tabs__inner{
+    @extend .g-clearfix;
+}

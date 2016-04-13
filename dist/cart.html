@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Product Page</title>
+    <title>Cart Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -31,12 +31,12 @@
                     <a href="#!" class="b-callback__link" data-modal="#callback">Заказать обратный звонок</a>
                 </div>
                 <!--/header callback end-->
-                <a href="cart.html" class="b-cartlink">
+                <a href="cart.html" class="b-cartlink active">
                     <span class="b-cartlink__icon">
                         <i class="icomoon-cart-fill"></i>
                     </span>
                     <span class="b-cartlink__text">В вашей корзине</span>
-                    <span class="b-cartlink__count">0 товаров</span>
+                    <span class="b-cartlink__count"><span id="cartcount">3</span> товаров</span>
                 </a>
 
                 <ul class="b-lang js-lang">
@@ -103,7 +103,7 @@
             <nav class="b-header__catalog">
                 <div class="g-container">
                     <ul class="h-catalog js-menu">
-                        <li class="h-catalog__item current">
+                        <li class="h-catalog__item">
                             <a href="catalog.html" class="h-catalog__link">Гидравлика <i class="icon-down-dir"></i></a>
                             <ul class="h-subcatalog">
                                 <li class="h-subcatalog__item">
@@ -121,7 +121,7 @@
                                 <li class="h-subcatalog__item">
                                     <a href="catalog.html" class="h-subcatalog__link">Регуляторы расхода</a>
                                 </li>
-                                <li class="h-subcatalog__item current">
+                                <li class="h-subcatalog__item">
                                     <a href="catalog.html" class="h-subcatalog__link">Обратные клапаны (гидрозамки)</a>
                                 </li>
                                 <li class="h-subcatalog__item">
@@ -243,234 +243,100 @@
                         <span itemprop="title">Главная</span>
                     </a>
                 </li>
-                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <a href="catalog.html" class="breadcrumbs__link" itemprop="url">
-                        <span itemprop="title">Гидравлика</span>
-                    </a>
-                </li>
-                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <a href="catalog.html" class="breadcrumbs__link" itemprop="url">
-                        <span itemprop="title">Обратные клапаны (гидрозамки)</span>
-                    </a>
-                </li>
                 <li class="breadcrumbs__item">
-                    Гидрозамок резьбового монтажа
+                    Корзина
                 </li>
             </ol>
             <!--/breadcrumbs end-->
             
-            <div itemscope itemtype="http://schema.org/Product">
-                <section class="page__section">
-                    <div class="g-row">
-                        <!--product info start-->
-                        <form class="product-info">
-                            <h1 class="g-subtitle" itemprop="name">Гидрозамок резьбового монтажа</h1>
-                            <span class="product-info__price" itemscope itemtype="http://schema.org/Offer">
-                                <span itemprop="price" content="1350.00">1 350</span>
-                                <span itemprop="priceCurrency" content="UAH">грн</span>
-                            </span>
-                            <div class="g-row">
-                                <div class="product-info__col">
-                                    <label class="product-info__label">Рабочий объем, см<sup>3</sup>/об.</label>
-                                </div>
-                                <div class="product-info__col">
-                                    <select class="product-info__select">
-                                        <option>Не определено</option>
-                                        <option>Значение 1</option>
-                                        <option>Значение 2</option>
-                                    </select>
-                                </div>
-                            </div>
+            <section class="page__section">
+                <h1 class="g-title">Корзина</h1>
+                
+                <div class="g-table-wrap">
+                    <table class="cart-table js-cart">
+                        <thead>
+                            <tr>
+                                <th class="g-text-left">Фото</th>
+                                <th class="g-text-left cart-table__large">Название</th>
+                                <th>Цена</th>
+                                <th>Кол-во</th>
+                                <th>Всего</th>
+                                <th>Изменить</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="g-text-center">
+                                    <a href="product.html">
+                                        <img src="img/del/product02-xs.jpg" class="cart-table__img" alt="Product" />
+                                    </a>
+                                </td>
+                                <td class="cart-table__large">
+                                    <a href="product.html" class="cart-table__title">Гидравлический распределитель FW 02</a>
+                                </td>
+                                <td class="g-text-center">
+                                    <span class="cart-table__price js-price">1350</span>&nbsp;грн
+                                </td>
+                                <td class="g-text-center">
+                                    <input type="number" class="cart-table__count js-number-input" value="1" min="1"  />
+                                </td>
+                                <td class="g-text-center">
+                                    <span class="cart-table__price js-total">1350</span>&nbsp;грн
+                                </td>
+                                <td class="g-text-center">
+                                    <button type="button" class="cart-table__btn js-recalc" title="Обновить">
+                                        <i class="icon-arrows-ccw"></i>
+                                    </button>
+                                    <button type="button" class="cart-table__btn cart-table__btn--del js-delete" title="Удалить">
+                                        <i class="icon-cancel"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="g-text-center">
+                                    <a href="product.html">
+                                        <img src="img/del/product03-xs.jpg" class="cart-table__img" alt="Product" />
+                                    </a>
+                                </td>
+                                <td class="cart-table__large">
+                                    <a href="product.html" class="cart-table__title">Распределитель FW 01</a>
+                                </td>
+                                <td class="g-text-center">
+                                    <span class="cart-table__price js-price">550</span>&nbsp;грн
+                                </td>
+                                <td class="g-text-center">
+                                    <input type="number" class="cart-table__count js-number-input" value="2" min="1" />
+                                </td>
+                                <td class="g-text-center">
+                                    <span class="cart-table__price js-total">1100</span>&nbsp;грн
+                                </td>
+                                <td class="g-text-center">
+                                    <button type="button" class="cart-table__btn js-recalc" title="Обновить">
+                                        <i class="icon-arrows-ccw"></i>
+                                    </button>
+                                    <button type="button" class="cart-table__btn cart-table__btn--del js-delete" title="Удалить">
+                                        <i class="icon-cancel"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <span class="cart-table__total">Итого: <span class="cart-table__price js-total-price">2450</span> грн</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
 
-                            <div class="g-row">
-                                <div class="product-info__col">
-                                    <label class="product-info__label">Другая характеристика</label>
-                                </div>
-                                <div class="product-info__col">
-                                    <select class="product-info__select">
-                                        <option>Не определено</option>
-                                        <option>Значение 1</option>
-                                        <option>Значение 2</option>
-                                    </select>
-                                </div>
-                            </div>
+                <button type="button" class="g-btn g-btn--alt g-btn--large js-checkout-btn" data-modal="#checkout">Оформить заказ</button>
 
-                            <div class="g-row">
-                                <div class="product-info__col">
-                                    <label class="product-info__label">Кол-во товара</label>
-                                    <input type="number" class="product-info__input js-number-input" value="1" min="1" />
-                                </div>
-                                <div class="product-info__col">
-                                    <button type="submit" class="product-info__btn">В корзину</button>
-                                </div>
-                            </div>
-
-                            <ul class="product-info__list">
-                                <li>
-                                    <a href="#"><i class="icon-file-pdf"></i>Каталог мотор ОМZP</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon-file-word"></i>Каталог мотор ОМZP-2</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon-file-excel"></i>Каталог мотор ОМZP-3</a>
-                                </li>
-                            </ul>
-                        </form>
-                        <!--/product info end-->
-
-                        <!--product gallery start-->
-                        <div class="product-gallery">
-                            <figure class="product-thumb">
-                                <div class="product-thumb__inner js-gallery-target">
-                                    <img src="img/del/product02-md.jpg" class="product-thumb__img" alt="Product1" itemprop="image" />
-                                </div>
-                                <span class="product-thumb__icon">
-                                    <i class="icon-zoom-in"></i>
-                                </span>
-                            </figure>
-
-                            <ul class="product-thumb-list js-gallery">
-                                <li class="product-thumb-list__item">
-                                    <figure class="product-thumb-list__inner" data-img="img/del/product02-md.jpg">
-                                        <img src="img/del/product02-xs.jpg" class="product-thumb-list__img" alt="Product1" />
-                                    </figure>
-                                </li>
-                                <li class="product-thumb-list__item">
-                                    <figure class="product-thumb-list__inner" data-img="img/del/product03-md.jpg">
-                                        <img src="img/del/product03-xs.jpg" class="product-thumb-list__img" alt="Product2" />
-                                    </figure>
-                                </li>
-                                <li class="product-thumb-list__item">
-                                    <figure class="product-thumb-list__inner" data-img="img/del/product04-md.jpg">
-                                        <img src="img/del/product04-xs.jpg" class="product-thumb-list__img" alt="Product3" />
-                                    </figure>
-                                </li>
-                                <li class="product-thumb-list__item">
-                                    <figure class="product-thumb-list__inner" data-img="img/del/product05-md.jpg">
-                                        <img src="img/del/product05-xs.jpg" class="product-thumb-list__img" alt="Product4" />
-                                    </figure>
-                                </li>
-                            </ul>
-
-                            <ul class="g-hidden js-gallery-large">
-                                <li><a href="img/del/product02-xl.jpg" data-caption="Product1">1</a></li>
-                                <li><a href="img/del/product03-xl.jpg" data-caption="Product2">2</a></li>
-                                <li><a href="img/del/product04-xl.jpg" data-caption="Product3">3</a></li>
-                                <li><a href="img/del/product05-xl.jpg" data-caption="Product4">4</a></li>
-                            </ul>
-                        </div>
-                        <!--/product gallery end-->
-                    </div>
-                </section>
-
-                <article class="page__section">
-                    <h2 class="g-subtitle">Описание товара</h2>
-                    <div itemprop="description">
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                    </div>
-
-                    <div class="g-table-wrap g-table-wrap--bordered">
-                        <table class="g-table g-text-center">
-                            <thead>
-                                <tr>
-                                    <th>Модель</th>
-                                    <th>Рабочий обьем<br />(см3/об)</th>
-                                    <th>Номинальная скорость<br />(об/мин)</th>
-                                    <th>Крутящий момент<br />(Н/м)</th>
-                                    <th>Мощность<br />(кВт)</th>
-                                    <th>Макс. расход<br />(л/мин)</th>
-                                    <th>Макс. расход<br />(л/мин)</th>
-                                    <th>Вес<br />кг</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>OZMP 50</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 60</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 70</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 80</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 90</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 100</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 120</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                                <tr>
-                                    <td>OZMP 130</td>
-                                    <td>50</td>
-                                    <td>60</td>
-                                    <td>70</td>
-                                    <td>180</td>
-                                    <td>80</td>
-                                    <td>90</td>
-                                    <td>5.6</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </article>
-            </div><!--/shema.org div-->
+                <div class="g-hidden g-text-center js-empty-cart">
+                    <span class="g-subtitle g-text-center">В корзине нет товаров</span>
+                    <a href="catalog.html" class="g-btn g-btn--primary">Продолжить покупки</a>
+                </div>
+            </section>
         </div><!--/g-container-->
 
         <!--products slider1 start-->
@@ -572,7 +438,6 @@
             </div>
         </section>
         <!--/products slider1 end-->
-
         <!--products slider2 start-->
         <section class="page__section">
             <div class="g-container">
@@ -672,7 +537,7 @@
             </div>
         </section>
         <!--/products slider2 end-->
-        
+
         <!--features section start-->
         <section class="b-features">
             <div class="g-container">
@@ -720,6 +585,51 @@
     </main>
     <!--/main content end-->
 
+    <!--checkout modal window start-->
+    <div class="modal" id="checkout">
+        <form class="modal__content">
+            <span class="g-title">Оформить заказ</span>
+            <div class="g-row">
+                <div class="g-col g-col--one-third">
+                    <p>
+                        <label class="g-label">
+                            <input type="radio" name="group1" checked />
+                            <span class="g-label__body">Физическое лицо</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="g-col g-col--one-third">
+                    <p>
+                        <label class="g-label">
+                            <input type="radio" name="group1" />
+                            <span class="g-label__body">Юридическое лицо</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="g-row">
+                <div class="g-col g-col--two-thirds">
+                    <label class="g-label">Ваше имя</label>
+                    <input type="text" class="g-input" placeholder="Укажите Ваше имя" />
+                </div>
+            </div>
+            <div class="g-row">
+                <div class="g-col g-col--one-half">
+                    <label class="g-label">Ваш email</label>
+                    <input type="email" class="g-input" placeholder="Укажите Ваш email" />
+                </div>
+                <div class="g-col g-col--one-half">
+                    <label class="g-label">Ваш телефон</label>
+                    <input type="text" class="g-input js-phone" placeholder="Укажите Ваш телефон" />
+                </div>
+            </div>
+            <label class="g-label">Комментарий к заказу</label>
+            <textarea class="g-textarea"></textarea>
+            <button type="submit" class="g-btn g-btn--alt">Отправить</button>
+        </form>
+    </div>
+    <!--/checkout modal window end-->
+
     <!--callback modal window start-->
     <div class="modal" id="callback">
         <form class="modal__content">
@@ -742,7 +652,7 @@
             <li class="m-menu__item">
                 <a href="index.html" class="m-menu__link">Главная</a>
             </li>
-            <li class="m-menu__item current">
+            <li class="m-menu__item">
                 <a href="catalog.html" class="m-menu__link">Каталог продукции</a>
             </li>
             <li class="m-menu__item">

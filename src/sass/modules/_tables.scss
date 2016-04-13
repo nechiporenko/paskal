@@ -45,6 +45,7 @@
     border:1px dashed #f2f2f2;
 
     table{
+        @extend .g-full-width;
         margin-bottom:0;
 
         th, td{

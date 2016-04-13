@@ -43,7 +43,7 @@ jQuery.extend(verge);
 
 /*
 Waypoints - 4.0.0
-Copyright � 2011-2015 Caleb Troughton
+Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
@@ -52,7 +52,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
 /*
 Waypoints Sticky Element Shortcut - 4.0.0
-Copyright � 2011-2015 Caleb Troughton
+Copyright © 2011-2015 Caleb Troughton
 Licensed under the MIT license.
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 */
@@ -68,11 +68,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
 
 /*
- * jquery.lightbox.js v1.3
- * https://github.com/duncanmcdougall/Responsive-Lightbox
- * Copyright 2015 Duncan McDougall and other contributors; @license Creative Commons Attribution 2.5
- */
-!function (a) { "use strict"; a.fn.lightbox = function (b) { var c = { margin: 50, nav: !0, blur: !0, minSize: 0 }, d = { items: [], lightbox: null, image: null, current: null, locked: !1, caption: null, init: function (b) { d.items = b; var e = "lightbox-" + Math.floor(1e5 * Math.random() + 1); d.lightbox || (d.lightbox = a("body").find(".bodyGlobalLightbox"), 0 === d.lightbox.length && (a("body").append('<div id="' + e + '" class="lightbox bodyGlobalLightbox" style="display:none;"><a href="#" class="lightbox__close lightbox__button"></a><a href="#" class="lightbox__nav lightbox__nav--prev lightbox__button"></a><a href="#" class="lightbox__nav lightbox__nav--next lightbox__button"></a><div href="#" class="lightbox__caption"><p></p></div></div>'), d.lightbox = a("#" + e)), d.caption = a(".lightbox__caption", d.lightbox)), d.items.length > 1 && c.nav ? a(".lightbox__nav", d.lightbox).show() : a(".lightbox__nav", d.lightbox).hide(), d.bindEvents() }, loadImage: function () { c.blur && a("body").addClass("blurred"), a("img", d.lightbox).remove(), d.lightbox.fadeIn("fast").append('<span class="lightbox__loading"></span>'); var b = a('<img src="' + a(d.current).attr("href") + '" draggable="false">'); a(b).load(function () { a(".lightbox__loading").remove(), d.lightbox.append(b), d.image = a("img", d.lightbox).hide(), d.resizeImage(), d.setCaption() }) }, setCaption: function () { var b = a(d.current).data("caption"); b && b.length > 0 ? (d.caption.fadeIn(), a("p", d.caption).text(b)) : d.caption.hide() }, resizeImage: function () { var b, e, f, g, h; e = a(window).height() - c.margin, f = a(window).outerWidth(!0) - c.margin, d.image.width("").height(""), g = d.image.height(), h = d.image.width(), h > f && (b = f / h, h = f, g = Math.round(g * b)), g > e && (b = e / g, g = e, h = Math.round(h * b)), d.image.width(h).height(g).css({ top: (a(window).height() - d.image.outerHeight()) / 2 + "px", left: (a(window).width() - d.image.outerWidth()) / 2 + "px" }).show(), d.locked = !1 }, getCurrentIndex: function () { return a.inArray(d.current, d.items) }, next: function () { return d.locked ? !1 : (d.locked = !0, void (d.getCurrentIndex() >= d.items.length - 1 ? a(d.items[0]).click() : a(d.items[d.getCurrentIndex() + 1]).click())) }, previous: function () { return d.locked ? !1 : (d.locked = !0, void (d.getCurrentIndex() <= 0 ? a(d.items[d.items.length - 1]).click() : a(d.items[d.getCurrentIndex() - 1]).click())) }, bindEvents: function () { a(d.items).click(function (b) { if (!d.lightbox.is(":visible") && (a(window).width() < c.minSize || a(window).height() < c.minSize)) return void a(this).attr("target", "_blank"); var e = a(this)[0]; b.preventDefault(), d.current = e, d.loadImage(), a(document).on("keydown", function (a) { 27 === a.keyCode && d.close(), 39 === a.keyCode && d.next(), 37 === a.keyCode && d.previous() }) }), d.lightbox.on("click", function (a) { this === a.target && d.close() }), a(d.lightbox).on("click", ".lightbox__nav--prev", function () { return d.previous(), !1 }), a(d.lightbox).on("click", ".lightbox__nav--next", function () { return d.next(), !1 }), a(d.lightbox).on("click", ".lightbox__close", function () { return d.close(), !1 }), a(window).resize(function () { d.image && d.resizeImage() }) }, close: function () { a(document).off("keydown"), a(d.lightbox).fadeOut("fast"), a("body").removeClass("blurred") } }; a.extend(c, b), d.init(this) } }(jQuery);
+    SimpleLightBox
+	By André Rinas, www.andreknieriem.de
+	Available for use under the MIT License
+*/
+!function (e, t, n, i) { "use strict"; e.fn.simpleLightbox = function (i) { var i = e.extend({ overlay: !0, spinner: !0, nav: !0, navText: ["&lsaquo;", "&rsaquo;"], captions: !0, captionDelay: 0, captionSelector: "img", captionType: "attr", captionsData: "title", captionPosition: "bottom", close: !0, closeText: "×", showCounter: !0, fileExt: "png|jpg|jpeg|gif", animationSlide: !0, animationSpeed: 250, preloading: !0, enableKeyboard: !0, loop: !0, docClose: !0, swipeTolerance: 50, className: "simple-lightbox", widthRatio: .8, heightRatio: .9, disableRightClick: !1, disableScroll: !0, alertError: !0, alertErrorMessage: "Image not found, next image will be loaded" }, i), a = (t.navigator.pointerEnabled || t.navigator.msPointerEnabled, 0), o = e(), s = function () { var e = n.body || n.documentElement, e = e.style; return "" == e.WebkitTransition ? "-webkit-" : "" == e.MozTransition ? "-moz-" : "" == e.OTransition ? "-o-" : "" == e.transition ? "" : !1 }, l = !1, r = [], d = this, s = s(), p = s !== !1 ? !0 : !1, c = "simplelb", g = e("<div>").addClass("sl-overlay"), h = e("<button>").addClass("sl-close").html(i.closeText), f = e("<div>").addClass("sl-spinner").html("<div></div>"), u = e("<div>").addClass("sl-navigation").html('<button class="sl-prev">' + i.navText[0] + '</button><button class="sl-next">' + i.navText[1] + "</button>"), m = e("<div>").addClass("sl-counter").html('<span class="sl-current"></span>/<span class="sl-total"></span>'), v = !1, x = 0, b = e(), y = e("<div>").addClass("sl-caption pos-" + i.captionPosition), w = e("<div>").addClass("sl-wrapper").addClass(i.className).html('<div class="sl-image"></div>'), E = function (t) { return i.fileExt ? "a" == e(t).prop("tagName").toLowerCase() && new RegExp(".(" + i.fileExt + ")$", "i").test(e(t).attr("href")) : !0 }, T = function () { b = e(".sl-image"), i.close && h.appendTo(w), i.showCounter && d.length > 1 && (m.appendTo(w), m.find(".sl-total").text(d.length)), i.nav && u.appendTo(w), i.spinner && f.appendTo(w) }, S = function (t) { t.trigger(e.Event("show.simplelightbox")), i.disableScroll && R("hide"), w.appendTo("body"), i.overlay && g.appendTo(e("body")), v = !0, x = d.index(t), o = e("<img/>").hide().attr("src", t.attr("href")), -1 == r.indexOf(t.attr("href")) && r.push(t.attr("href")), e(".sl-image").html("").attr("style", ""), o.appendTo(e(".sl-image")), g.fadeIn("fast"), e(".sl-close").fadeIn("fast"), f.show(), u.fadeIn("fast"), e(".sl-wrapper .sl-counter .sl-current").text(x + 1), m.fadeIn("fast"), C(), i.preloading && q(), setTimeout(function () { t.trigger(e.Event("shown.simplelightbox")) }, i.animationSpeed) }, C = function (n) { if (o.length) { var a = new Image, s = e(t).width() * i.widthRatio, c = e(t).height() * i.heightRatio; a.src = o.attr("src"), e(a).bind("error", function (t) { return d.eq(x).trigger(e.Event("error.simplelightbox")), v = !1, l = !0, f.hide(), i.alertError ? (alert(i.alertErrorMessage), void D(1 == n || -1 == n ? n : 1)) : void 0 }), a.onload = function () { "undefined" != typeof n && d.eq(x).trigger(e.Event("changed.simplelightbox")).trigger(e.Event((1 === n ? "nextDone" : "prevDone") + ".simplelightbox")), -1 == r.indexOf(o.attr("src")) && r.push(o.attr("src")); var g = a.width, h = a.height; if (g > s || h > c) { var u = g / h > s / c ? g / s : h / c; g /= u, h /= u } e(".sl-image").css({ top: (e(t).height() - h) / 2 + "px", left: (e(t).width() - g) / 2 + "px" }), f.hide(), o.css({ width: g + "px", height: h + "px" }).fadeIn("fast"), l = !0; var m = "self" == i.captionSelector ? d.eq(x) : d.eq(x).find(i.captionSelector); if ("data" == i.captionType) var b = m.data(i.captionsData); else if ("text" == i.captionType) var b = m.html(); else var b = m.prop(i.captionsData); if (i.loop || (0 == x && e(".sl-prev").hide(), x >= d.length - 1 && e(".sl-next").hide(), x > 0 && x < d.length - 1 && e(".sl-prev, .sl-next").show()), 1 == d.length && e(".sl-prev, .sl-next").hide(), 1 == n || -1 == n) { var y = { opacity: 1 }; i.animationSlide && (p ? (I(0, 100 * n + "px"), setTimeout(function () { I(i.animationSpeed / 1e3, "0px"), 50 })) : y.left = parseInt(e(".sl-image").css("left")) + 100 * n + "px"), e(".sl-image").animate(y, i.animationSpeed, function () { v = !1, k(b) }) } else v = !1, k(b) } } }, k = function (t) { "" != t && "undefined" != typeof t && i.captions && y.html(t).hide().appendTo(e(".sl-image")).delay(i.captionDelay).fadeIn("fast") }, I = function (t, n) { var i = {}; i[s + "transform"] = "translateX(" + n + ")", i[s + "transition"] = s + "transform " + t + "s linear", e(".sl-image").css(i) }, q = function () { var t = 0 > x + 1 ? d.length - 1 : x + 1 >= d.length - 1 ? 0 : x + 1, n = 0 > x - 1 ? d.length - 1 : x - 1 >= d.length - 1 ? 0 : x - 1; e("<img />").attr("src", d.eq(t).attr("href")).load(function () { -1 == r.indexOf(e(this).attr("src")) && r.push(e(this).attr("src")), d.eq(x).trigger(e.Event("nextImageLoaded.simplelightbox")) }), e("<img />").attr("src", d.eq(n).attr("href")).load(function () { -1 == r.indexOf(e(this).attr("src")) && r.push(e(this).attr("src")), d.eq(x).trigger(e.Event("prevImageLoaded.simplelightbox")) }) }, D = function (t) { d.eq(x).trigger(e.Event("change.simplelightbox")).trigger(e.Event((1 === t ? "next" : "prev") + ".simplelightbox")); var n = x + t; if (!(v || (0 > n || n >= d.length) && 0 == i.loop)) { x = 0 > n ? d.length - 1 : n > d.length - 1 ? 0 : n, e(".sl-wrapper .sl-counter .sl-current").text(x + 1); var s = { opacity: 0 }; i.animationSlide && (p ? I(i.animationSpeed / 1e3, -100 * t - a + "px") : s.left = parseInt(e(".sl-image").css("left")) + -100 * t + "px"), e(".sl-image").animate(s, i.animationSpeed, function () { setTimeout(function () { var n = d.eq(x); o.attr("src", n.attr("href")), -1 == r.indexOf(n.attr("href")) && f.show(), e(".sl-caption").remove(), C(t), i.preloading && q() }, 100) }) } }, M = function () { if (!v) { var t = d.eq(x), n = !1; t.trigger(e.Event("close.simplelightbox")), e(".sl-image img, .sl-overlay, .sl-close, .sl-navigation, .sl-image .sl-caption, .sl-counter").fadeOut("fast", function () { i.disableScroll && R("show"), e(".sl-wrapper, .sl-overlay").remove(), n || t.trigger(e.Event("closed.simplelightbox")), n = !0 }), o = e(), l = !1, v = !1 } }, R = function (i) { if ("hide" == i) { var a = t.innerWidth; if (!a) { var o = n.documentElement.getBoundingClientRect(); a = o.right - Math.abs(o.left) } if (n.body.clientWidth < a) { var s = n.createElement("div"), l = parseInt(e("body").css("padding-right"), 10); s.className = "sl-scrollbar-measure", e("body").append(s); var r = s.offsetWidth - s.clientWidth; e(n.body)[0].removeChild(s), e("body").data("padding", l), r > 0 && e("body").css({ "padding-right": l + r, overflow: "hidden" }) } } else e("body").css({ "padding-right": e("body").data("padding"), overflow: "visible" }) }; T(), e(t).on("resize", C), d.on("click." + c, function (t) { if (E(this)) { if (t.preventDefault(), v) return !1; S(e(this)) } }), e(n).on("click", ".sl-close", function (e) { e.preventDefault(), l && M() }), e(n).click(function (t) { l && i.docClose && 0 == e(t.target).closest(".sl-image").length && 0 == e(t.target).closest(".sl-navigation").length && M() }), i.disableRightClick && e(n).on("contextmenu", ".sl-image img", function (e) { return !1 }), e(n).on("click", ".sl-navigation button", function (t) { t.preventDefault(), a = 0, D(e(this).hasClass("sl-next") ? 1 : -1) }), i.enableKeyboard && e(n).on("keyup." + c, function (e) { if (e.preventDefault(), a = 0, l) { var t = e.keyCode; 27 == t && M(), (37 == t || 39 == e.keyCode) && D(39 == e.keyCode ? 1 : -1) } }); var O = 0, P = 0, W = !1, X = 0; return e(n).on("touchstart mousedown pointerdown MSPointerDown", ".sl-image", function (e) { return W ? !0 : (p && (X = parseInt(b.css("left"))), W = !0, O = e.originalEvent.pageX || e.originalEvent.touches[0].pageX, !1) }).on("touchmove mousemove pointermove MSPointerMove", function (e) { return W ? (e.preventDefault(), P = e.originalEvent.pageX || e.originalEvent.touches[0].pageX, a = O - P, void (i.animationSlide && (p ? I(0, -a + "px") : b.css("left", X - a + "px")))) : !0 }).on("touchend mouseup touchcancel pointerup pointercancel MSPointerUp MSPointerCancel", function (e) { W && (W = !1, Math.abs(a) > i.swipeTolerance ? D(a > 0 ? 1 : -1) : i.animationSlide && (p ? I(i.animationSpeed / 1e3, "0px") : b.animate({ left: X + "px" }, i.animationSpeed / 2))) }), this.open = function (t) { t = t || e(this[0]), S(t) }, this.next = function () { D(1) }, this.prev = function () { D(-1) }, this.close = function () { M() }, this.destroy = function () { e(n).unbind("click." + c).unbind("keyup." + c), M(), e(".sl-overlay, .sl-wrapper").remove() }, this } }(jQuery, window, document);
 
 // Application Scripts:
 // Переключатель языка
@@ -86,6 +86,11 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 // Галерея в карточке товара
 // Слайдеры товаров
 // Покажем / спрячем фильтр в каталоге
+// Вкладки
+// Фотогалерея
+// Видеогалерея
+// Поле для ввода кол-ва товаров
+// Страница корзины товаров
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -95,6 +100,18 @@ jQuery(document).ready(function ($) {
 
     $body.append('<div id="overlay" class="overlay"></div>');
     var $overlay = $('#overlay');//оверлей
+
+    var lightboxOptions = {//общие настройки для лайтбокса в галереях
+        navText: ['<i class="icon-left-open-big"></i>', '<i class="icon-right-open-big"></i>'],
+        captions: true,
+        captionSelector: 'self',
+        captionType: 'data',
+        captionsData: 'caption',
+        close: true,
+        closeText: '<i class="icon-cancel"></i>',
+        showCounter: false,
+        disableScroll: false
+    };
 
     //
     // Переключатель языка
@@ -367,7 +384,7 @@ jQuery(document).ready(function ($) {
 
         // закрываем
         method.close = function () {
-            $modal.hide();
+            $modal.hide().find('iframe').attr('src', '');//если в модальном окне было видео - убъем
             $overlay.hide().unbind('click', method.close);
             $window.unbind('resize.modal');
         };
@@ -394,7 +411,7 @@ jQuery(document).ready(function ($) {
         var $target = $('.js-gallery-target').find('img'), //картинка в блоке предпросмотра
             index = 0; //индекс картинки в галерее
 
-        $('.js-gallery-large').find('a').lightbox();//натравили лайтбокс на скрытый список крупных изображений
+        $('.js-gallery-large').find('a').simpleLightbox(lightboxOptions);//натравили лайтбокс на скрытый список крупных изображений
 
         $('.js-gallery').find('li').filter(':first').find('figure').addClass('active');//добавили класс к первой картинке
 
@@ -507,6 +524,8 @@ jQuery(document).ready(function ($) {
     if ($('.js-product-slider1').length) { initProductSlider($('.js-product-slider1')); }
     if ($('.js-product-slider2').length) { initProductSlider($('.js-product-slider2')); }
 
+
+
     //
     // Покажем / спрячем фильтр в каталоге
     //---------------------------------------------------------------------------------------
@@ -526,4 +545,160 @@ jQuery(document).ready(function ($) {
     if ($('.js-filter-btn').length) {
         collapseFilter();
     }
+
+    //
+    // Вкладки
+    //---------------------------------------------------------------------------------------
+    function initTabs() {
+        var $list = $('.js-tabs'),
+            $content = $('.js-tabs-content > div'),
+            method = {};
+
+        method.init = (function () {//спрячем "лишние" вкладки
+            $content.hide()
+            $list.each(function () {
+                var current = $(this).find('li.current');
+                if (current.length < 1) { $(this).find('li:first').addClass('current'); }
+                current = $(this).find('li.current a').attr('href');
+                $(current).show();
+            });
+        })();
+
+        method.show = function (el) {//обработка клика по вкладке
+            var $tabs = el.parents('ul').find('li');
+            var tab_next = el.attr('href');
+            var tab_current = $tabs.filter('.current').find('a').attr('href');
+            $(tab_current).hide();
+            $tabs.removeClass('current');
+            el.parent().addClass('current');
+            $(tab_next).fadeIn();
+            history.pushState(null, null, window.location.search + el.attr('href'));
+        };
+
+
+        $list.on('click', 'a[href^="#"]', function (e) {//клик по вкладке
+            e.preventDefault();
+            method.show($(this));
+        });
+
+        method.parsing = (function () {//парсим линк и открываем нужную вкладку при загрузке
+            var hash = window.location.hash;
+            if (hash) {
+                var selectedTab = $list.find('a[href="' + hash + '"]');
+                selectedTab.trigger('click', true);
+            };
+        })();
+    };
+    if ($('.js-tabs').length) { initTabs(); }
+
+    // Фотогалерея
+    $('.js-photogallery a').simpleLightbox(lightboxOptions);
+
+    //
+    // Видеогалерея
+    //---------------------------------------------------------------------------------------
+    $('.js-videogallery').on('click', 'a', function (e) {
+        e.preventDefault();
+        var link = $(this).attr('href'),
+            id = getYoutubeID(link);
+
+        if (id) {
+            $('#videomodal').find('iframe').attr('src', 'https://www.youtube.com/embed/' + id + '?rel=0&amp;showinfo=0;autoplay=1');
+            showModal.open('#videomodal');
+        }
+
+        function getYoutubeID(url) {//парсим youtube-ссылку, возвращаем id видео
+            var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp),
+                urllink;
+            if (match && match[1].length == 11) {
+                urllink = match[1];
+            } else {
+                urllink = false;
+            }
+            return urllink;
+        }
+    });
+
+   
+    //
+    // Поле для ввода кол-ва товаров
+    //---------------------------------------------------------------------------------------
+    $('.js-number-input').on('keydown', function (e) {
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            return;
+        };
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        };
+    }).on('change', function () {
+        var num = $(this).val();
+        num = Math.round(num);
+
+        if (num <= 0) {
+            num = 1;
+        };
+
+        if (num > 1000) {
+            num = 999;
+        };
+
+        $(this).val(num);
+    });
+
+    //
+    // Страница корзины товаров
+    //---------------------------------------------------------------------------------------
+    function recalcCart() {
+        var $cart = $('.js-cart'),
+            $cartcount = $('#cartcount'),
+            $total = $cart.find('.js-total-price'),
+            method = {};
+
+        method.recalc = function () {
+            var total_count = 0,
+                total_price = 0;
+            $cart.find('tbody tr').each(function () {
+                var price = + $(this).find('.js-price').text(),
+                    count = + $(this).find('.js-number-input').val(),
+                    item_price = count * price;
+                total_count = total_count + count;
+                total_price = total_price + item_price;
+                $(this).find('.js-total').text(item_price);
+            });
+
+            $total.text(total_price);
+            $cartcount.text(total_count);
+
+            if (total_count === 0) {
+                method.empty();
+            }
+        };
+
+        method.delete = function (el) {
+            var $row = el.parents('tr');
+            $row.remove();
+            method.recalc();
+        };
+
+        method.empty = function () {//если нет товаров в корзине
+            $('.js-checkout-btn').prop('disabled', true);
+            $('.js-empty-cart').removeClass('g-hidden');
+            $('.b-cartlink').removeClass('active');
+        };
+
+        method.recalc();
+        
+        $cart.on('click', '.js-recalc', method.recalc);//обновляем цену при изм.кол-ва товаров
+        $cart.on('click', '.js-delete', function () {//удаляем строку
+            var $el = $(this);
+            method.delete($el);
+        });
+    };
+
+    if ($('.js-cart').length > 0) {
+        recalcCart();
+    };
 });
