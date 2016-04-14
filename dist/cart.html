@@ -261,7 +261,7 @@
                                 <th>Цена</th>
                                 <th>Кол-во</th>
                                 <th>Всего</th>
-                                <th>Изменить</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -284,10 +284,7 @@
                                     <span class="cart-table__price js-total">1350</span>&nbsp;грн
                                 </td>
                                 <td class="g-text-center">
-                                    <button type="button" class="cart-table__btn js-recalc" title="Обновить">
-                                        <i class="icon-arrows-ccw"></i>
-                                    </button>
-                                    <button type="button" class="cart-table__btn cart-table__btn--del js-delete" title="Удалить">
+                                    <button type="button" class="cart-table__btn js-delete" title="Удалить">
                                         <i class="icon-cancel"></i>
                                     </button>
                                 </td>
@@ -311,10 +308,7 @@
                                     <span class="cart-table__price js-total">1100</span>&nbsp;грн
                                 </td>
                                 <td class="g-text-center">
-                                    <button type="button" class="cart-table__btn js-recalc" title="Обновить">
-                                        <i class="icon-arrows-ccw"></i>
-                                    </button>
-                                    <button type="button" class="cart-table__btn cart-table__btn--del js-delete" title="Удалить">
+                                    <button type="button" class="cart-table__btn js-delete" title="Удалить">
                                         <i class="icon-cancel"></i>
                                     </button>
                                 </td>
@@ -342,7 +336,7 @@
         <!--products slider1 start-->
         <section class="page__section page__section--alt">
             <div class="g-container">
-                <h3 class="g-subtitle">Похожие товары</h3>
+                <h2 class="g-subtitle">Похожие товары</h2>
                 <div class="product-slider">
                     <ul class="product-slider__list js-product-slider1">
                         <li class="product-slider__item">
@@ -441,7 +435,7 @@
         <!--products slider2 start-->
         <section class="page__section">
             <div class="g-container">
-                <h4 class="g-subtitle">Рекомендуемые товары</h4>
+                <h3 class="g-subtitle">Рекомендуемые товары</h3>
                 <div class="product-slider">
                     <ul class="product-slider__list js-product-slider2">
                         <li class="product-slider__item">
@@ -542,7 +536,7 @@
         <section class="b-features">
             <div class="g-container">
                 <header class="b-features__description">
-                    <h3 class="b-features__title">Мы гарантируем</h3>
+                    <h4 class="b-features__title">Мы гарантируем</h4>
                     <p>Производители промышленного оборудования в Турции, Южной Европе и Азии под торговой маркой <em>"Winman"</em>, <em>"Freeway"</em>, <em>"Hiderocel"</em>, <em>"RANPump"</em></p>
                 </header>
                 <div class="g-row">
@@ -593,7 +587,7 @@
                 <div class="g-col g-col--one-third">
                     <p>
                         <label class="g-label">
-                            <input type="radio" name="group1" checked />
+                            <input type="radio" name="payment" checked value="individual" />
                             <span class="g-label__body">Физическое лицо</span>
                         </label>
                     </p>
@@ -601,16 +595,20 @@
                 <div class="g-col g-col--one-third">
                     <p>
                         <label class="g-label">
-                            <input type="radio" name="group1" />
+                            <input type="radio" name="payment" value="company" />
                             <span class="g-label__body">Юридическое лицо</span>
                         </label>
                     </p>
                 </div>
             </div>
             <div class="g-row">
-                <div class="g-col g-col--two-thirds">
+                <div class="g-col g-col--one-half" >
                     <label class="g-label">Ваше имя</label>
-                    <input type="text" class="g-input" placeholder="Укажите Ваше имя" />
+                    <input type="text" class="g-input" placeholder="Укажите Ваше имя" required />
+                </div>
+                <div class="g-col g-col--one-half g-hidden" id="additional_field">
+                    <label class="g-label">Компания</label>
+                    <input type="text" class="g-input" placeholder="Укажите название компании" />
                 </div>
             </div>
             <div class="g-row">

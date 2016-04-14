@@ -64,7 +64,7 @@
     width:36px;
     height:36px;
     line-height:36px;
-    color:$primary;
+    color:$primary-alt;
     background:#f5f5f5;
 
     &:hover{
@@ -75,9 +75,7 @@
         background:#fff;
     }
 }
-.cart-table__btn--del{
-    color:$primary-alt;
-}
+
 
 
 .cart-table__total{

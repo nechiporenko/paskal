@@ -15,6 +15,7 @@
 // Видеогалерея
 // Поле для ввода кол-ва товаров
 // Страница корзины товаров
+// Покажем / скроем поле "Компания" при клике по радио-кнопке при оформлении заказа
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -25,7 +26,7 @@ jQuery(document).ready(function ($) {
     $body.append('<div id="overlay" class="overlay"></div>');
     var $overlay = $('#overlay');//оверлей
 
-    var lightboxOptions = {//общие настройки для лайтбокса в галереях
+    var lightboxOptions = {//общие настройки для лайтбокса в фотогалереи и карточке товара
         navText: ['<i class="icon-left-open-big"></i>', '<i class="icon-right-open-big"></i>'],
         captions: true,
         captionSelector: 'self',
@@ -364,6 +365,19 @@ jQuery(document).ready(function ($) {
     }
 
     //
+    // Стилизуем таблицы в описании товара
+    //---------------------------------------------------------------------------------------
+    $('#product_description').find('table').each(function () {
+        var $el = $(this);
+        $el.addClass('g-table g-text-center');
+        if ($el.parent('div').hasClass('g-table-wrap')) {
+            return;
+        } else {//если нет "обертки"
+            $el.wrap('<div class="g-table-wrap g-table-wrap--bordered"></div>');
+        };
+    });
+
+    //
     // Слайдеры товаров
     //---------------------------------------------------------------------------------------
     function initProductSlider(el) {
@@ -597,7 +611,7 @@ jQuery(document).ready(function ($) {
             $cartcount.text(total_count);
 
             if (total_count === 0) {
-                method.empty();
+                method.empty();//если нет товаров в корзине
             }
         };
 
@@ -613,10 +627,10 @@ jQuery(document).ready(function ($) {
             $('.b-cartlink').removeClass('active');
         };
 
-        method.recalc();
-        
-        $cart.on('click', '.js-recalc', method.recalc);//обновляем цену при изм.кол-ва товаров
-        $cart.on('click', '.js-delete', function () {//удаляем строку
+        method.recalc();//проверим сумму при загрузке страницы
+
+        $cart.on('change', '.js-number-input', method.recalc);//обновляем цену при изм.кол-ва товаров
+        $cart.on('click', '.js-delete', function () {//удаляем строку таблицы
             var $el = $(this);
             method.delete($el);
         });
@@ -625,4 +639,16 @@ jQuery(document).ready(function ($) {
     if ($('.js-cart').length > 0) {
         recalcCart();
     };
+
+    //
+    // Покажем / скроем поле "Компания" при клике по радио-кнопке при оформлении заказа
+    //---------------------------------------------------------------------------------------
+    $('#checkout').find('input[type=radio][name=payment]').on('change', function () {
+        var $target = $('#additional_field');
+        if ($(this).val() === 'individual') {
+            $target.addClass('g-hidden').find('input[type=text]').prop('required', false);
+        } else if ($(this).val() === 'company') {
+            $target.removeClass('g-hidden').find('input[type=text]').prop('required', true);
+        }
+    });
 });
