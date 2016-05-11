@@ -12,6 +12,7 @@
     top:0; left:0;
     border-bottom:1px solid $border-color;
     box-shadow:0 2px 4px rgba(#000, .1);
+    @include backface-visibility(hidden);
 
     @include media($desktop){
         &.stuck{
