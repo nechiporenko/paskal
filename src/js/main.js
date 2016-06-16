@@ -345,11 +345,25 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     function initProductGallery() {
         var $target = $('.js-gallery-target').find('img'), //картинка в блоке предпросмотра
+            $el=$('.js-gallery').children('li'), //превьюшки галереи
             index = 0; //индекс картинки в галерее
 
         $('.js-gallery-large').find('a').simpleLightbox(lightboxOptions);//натравили лайтбокс на скрытый список крупных изображений
 
-        $('.js-gallery').find('li').filter(':first').find('figure').addClass('active');//добавили класс к первой картинке
+        $el.filter(':first').find('figure').addClass('active');//добавили класс к первой превьюшке
+        if ($el.length > 4) {//если более 4 превьюшек - запустим их в слайдере
+            $('.js-gallery').wrap('<div class="product-thumb-slider"></div>').bxSlider({
+                minSlides: 4,
+                maxSlides: 4,
+                moveSlides: 1,
+                slideWidth: 110,
+                auto: false,
+                pager: false,
+                infiniteLoop: false,
+                hideControlOnEnd: true,
+                useCSS: false,
+            });
+        };
 
         $('.js-gallery').on('click', 'figure', function () {//клик по превьюшке - изменим картинку в блоке предпросмотра
             var $el = $(this);
@@ -381,10 +395,17 @@ jQuery(document).ready(function ($) {
     $('#product_description').find('table').each(function () {
         var $el = $(this);
         $el.addClass('g-table g-text-center');
-        if ($el.parent('div').hasClass('g-table-wrap')) {
+        if ($el.parent('div').hasClass('g-table-wrap')) {//если есть обертка
             return;
         } else {//если нет "обертки"
-            $el.wrap('<div class="g-table-wrap g-table-wrap--bordered"></div>');
+            var border = +$el.attr('border');//если нужно сделать таблицу с оазделителями
+            if (border > 0) {
+                $el.removeAttr('border').addClass('g-table--bordered');
+                $el.wrap('<div class="g-table-wrap"></div>');
+            } else {
+                $el.wrap('<div class="g-table-wrap g-table-wrap--bordered"></div>');
+            }
+            
         };
     });
 

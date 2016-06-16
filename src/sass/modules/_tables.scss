@@ -20,7 +20,9 @@
     }
 
     td{
-        border-bottom:1px solid $border-color;
+        border-color:$border-color;
+        border-bottom-style: solid;
+        border-bottom-width:1px;
     }
 
     &.g-text-center{
@@ -34,6 +36,12 @@
     }
 }
 
+.g-table--bordered{
+    th, td{
+        border:1px solid $border-color;
+    }
+}
+
 
 
 /*Make table scrollable on small screens*/
@@ -42,7 +50,9 @@
     overflow-y:hidden;
     overflow-x:auto;
     @include px2rem(margin-bottom, $project-line-height);
-    border:1px dashed #f2f2f2;
+    border-color:$border-color;
+    border-width:1px;
+    border-style:dashed;
 
     table{
         @extend .g-full-width;

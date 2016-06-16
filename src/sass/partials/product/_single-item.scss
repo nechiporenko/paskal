@@ -183,3 +183,40 @@
 .product-thumb-list__inner{
     @extend .g-shadow-hover;
 }
+
+//Product gallery - slider
+$controls: '../img/slider/arrows.png';
+.product-thumb-slider{
+    padding:0 30px;
+    max-width:500px;
+    box-sizing:border-box;
+
+
+    .bx-wrapper{
+        .bx-prev{
+            left:-30px;
+            background: url($controls) no-repeat 0 -130px;
+        }
+        .bx-next{
+            right:-30px;
+            background: url($controls) no-repeat 0 -195px;
+        }
+    }
+
+    .product-thumb-list{
+        margin:0;
+        max-width:none;
+    }
+    .product-thumb-list__item{
+        display:block;
+        padding:2px 3px 8px;
+    }
+
+    .product-thumb-list__inner{
+        &:hover,
+        &:active{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+}
+
